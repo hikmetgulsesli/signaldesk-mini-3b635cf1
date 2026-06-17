@@ -11,15 +11,15 @@
       <header class="app-topbar">
         <div class="brand">SignalDesk Mini</div>
         <nav class="app-nav" aria-label="Primary">
-          <button type="button" data-view="operations" onclick="app.actions.setView('operations')" class="active">Operations</button>
-          <button type="button" data-view="insights" onclick="app.actions.setView('insights')">Insights</button>
-          <button type="button" data-view="settings" onclick="app.actions.setView('settings')">Settings</button>
+          <button data-action-id="ACT_NAV_OPERATIONS" data-view="operations" class="active">Operations</button>
+          <button data-action-id="ACT_NAV_INSIGHTS" data-view="insights">Insights</button>
+          <button data-action-id="ACT_NAV_SETTINGS" data-view="settings">Settings</button>
         </nav>
         <div class="app-actions">
           <input type="search" data-action-id="ACT_SEARCH_RECORDS" placeholder="Search records..." aria-label="Search records" />
-          <button type="button" onclick="app.actions.createRecord()" class="primary">Create Record</button>
-          <button type="button" data-action-id="ACT_NOTIFICATIONS" aria-label="Notifications" disabled class="disabled-action">notifications</button>
-          <button type="button" data-action-id="ACT_HELP" aria-label="Help" disabled class="disabled-action">help_outline</button>
+          <button data-action-id="ACT_CREATE_RECORD" class="primary">Create Record</button>
+          <button data-action-id="ACT_NOTIFICATIONS" aria-label="Notifications" disabled class="disabled-action">notifications</button>
+          <button data-action-id="ACT_HELP" aria-label="Help" disabled class="disabled-action">help_outline</button>
         </div>
       </header>
 
@@ -63,7 +63,7 @@
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
               </select>
-              <button type="button" onclick="app.actions.clearFilters()" class="action">Clear Filters</button>
+              <button data-action-id="ACT_CLEAR_FILTERS" class="action">Clear Filters</button>
             </div>
             <div id="record-list-container">
               <table class="record-table">
@@ -81,8 +81,8 @@
             <div id="operations-empty" class="empty-state hidden">
               <h2>No records found</h2>
               <p>Create your first record or clear the active filters.</p>
-              <button type="button" onclick="app.actions.createRecord()" class="primary">Create Record</button>
-              <button type="button" onclick="app.actions.clearFilters()" class="action">Clear Filters</button>
+              <button data-action-id="ACT_CREATE_RECORD" class="primary">Create Record</button>
+              <button data-action-id="ACT_CLEAR_FILTERS" class="action">Clear Filters</button>
             </div>
           </div>
         </section>
@@ -122,7 +122,7 @@
               </div>
               <div class="form-actions">
                 <button data-action-id="ACT_SAVE_RECORD" class="primary" type="submit">Save Record</button>
-                <button type="button" onclick="app.actions.cancelEdit()" class="action">Cancel</button>
+                <button data-action-id="ACT_CANCEL_EDIT" class="action" type="button">Cancel</button>
               </div>
             </form>
           </div>
@@ -142,15 +142,13 @@
           </div>
           <div class="panel">
             <div class="filter-bar">
-              <div class="context-menu" style="position:relative;display:inline-block;">
-                <button type="button" data-action-id="ACT_FILTER_INSIGHTS" onclick="toggleInsightsFilterMenu()" class="action">Filter Insights</button>
-                <div id="insights-filter-menu" class="hidden" style="position:absolute;top:100%;left:0;z-index:10;background:var(--color-surface);border:1px solid var(--color-outline-variant);border-radius:var(--radius-DEFAULT);box-shadow:0 4px 8px rgba(0,0,0,0.1);min-width:140px;">
-                  <button type="button" data-filter="all" onclick="applyInsightsFilter('all')" style="display:block;width:100%;text-align:left;background:none;border:none;padding:8px 12px;cursor:pointer;">All Activity</button>
-                  <button type="button" data-filter="recent" onclick="applyInsightsFilter('recent')" style="display:block;width:100%;text-align:left;background:none;border:none;padding:8px 12px;cursor:pointer;">Recent Only</button>
-                  <button type="button" data-filter="high" onclick="applyInsightsFilter('high')" style="display:block;width:100%;text-align:left;background:none;border:none;padding:8px 12px;cursor:pointer;">High Priority</button>
-                </div>
-              </div>
-              <button type="button" data-action-id="ACT_EXPORT_SUMMARY" onclick="event.stopPropagation(); app.actions.exportSummary()" class="action">Export Summary</button>
+              <label for="insight-filter">Filter Insights</label>
+              <select id="insight-filter" data-action-id="ACT_FILTER_INSIGHTS">
+                <option value="all">All Activity</option>
+                <option value="recent">Recent Only</option>
+                <option value="high">High Priority</option>
+              </select>
+              <button data-action-id="ACT_EXPORT_SUMMARY" class="action">Export Summary</button>
             </div>
             <h2>Recent Activity</h2>
             <ul id="activity-list" class="activity-list"></ul>
@@ -185,8 +183,8 @@
               </div>
               <div class="form-actions">
                 <button data-action-id="ACT_SAVE_PREFERENCES" class="primary" type="submit">Save Preferences</button>
-                <button type="button" onclick="app.actions.resetPreferences()" class="action">Reset to Defaults</button>
-                <button type="button" onclick="app.actions.clearData()" class="action danger">Clear Data</button>
+                <button data-action-id="ACT_RESET_PREFERENCES" class="action" type="button">Reset to Defaults</button>
+                <button data-action-id="ACT_CLEAR_DATA" class="action danger" type="button">Clear Data</button>
               </div>
             </form>
           </div>
@@ -197,26 +195,14 @@
           <div class="panel empty-state">
             <h2 id="recovery-title">Something went wrong</h2>
             <p id="recovery-message">Records could not be loaded.</p>
-            <button type="button" onclick="app.actions.retryLoad()" class="primary">Retry Load</button>
-            <button type="button" onclick="app.actions.createRecord()" class="action">Create Record</button>
-            <button type="button" onclick="app.actions.clearFilters()" class="action">Clear Filters</button>
+            <button data-action-id="ACT_RETRY_LOAD" class="primary">Retry Load</button>
+            <button data-action-id="ACT_CREATE_RECORD" class="action">Create Record</button>
+            <button data-action-id="ACT_CLEAR_FILTERS" class="action">Clear Filters</button>
           </div>
         </section>
       </section>
     </main>
 
-    <script>
-      function toggleInsightsFilterMenu() {
-        const menu = document.getElementById('insights-filter-menu');
-        if (menu) menu.classList.toggle('hidden');
-      }
-      function applyInsightsFilter(value) {
-        if (window.app && app.actions && app.actions.setInsightsFilter) {
-          app.actions.setInsightsFilter(value);
-        }
-        toggleInsightsFilterMenu();
-      }
-    </script>
     <script src="assets/js/signaldesk-mini.state.js" defer></script>
     <script src="assets/js/signaldesk-mini.storage.js" defer></script>
     <script src="assets/js/test-bridge.js" defer></script>
