@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insights - SignalDesk Mini</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main data-setfarm-root="insights" data-testid="setfarm-app-root" class="app-shell relative h-screen w-full overflow-hidden">
+      <header class="app-topbar">
+        <div class="brand">SignalDesk Mini</div>
+        <nav class="app-nav" aria-label="Primary">
+          <button type="button" onclick="window.location.href='index.html'">Operations</button>
+          <button type="button" class="active" onclick="/* current view */">Insights</button>
+          <button type="button" onclick="window.location.href='index.html#settings'">Settings</button>
+        </nav>
+        <div class="app-actions">
+          <input type="search" placeholder="Search..." aria-label="Search records" disabled class="disabled-action" />
+          <button type="button" onclick="window.location.href='index.html#editor'" class="primary">Create Record</button>
+          <button type="button" aria-label="Notifications" disabled class="disabled-action">notifications</button>
+          <button type="button" aria-label="Help" disabled class="disabled-action">help_outline</button>
+        </div>
+      </header>
+
+      <section class="app-stage">
+        <div id="error-banner" class="error-banner hidden" role="alert"></div>
+
+        <!-- Insights -->
+        <section id="view-insights" class="view">
+          <div class="summary-grid" aria-label="Insight metrics">
+            <div class="summary-card">
+              <h2>Open Rate</h2>
+              <div class="metric" data-metric="open-rate">0%</div>
+            </div>
+            <div class="summary-card">
+              <h2>Avg Resolution</h2>
+              <div class="metric" data-metric="avg-resolution">0h</div>
+            </div>
+            <div class="summary-card">
+              <h2>Total Records</h2>
+              <div class="metric" data-metric="total">0</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="filter-bar">
+              <div class="context-menu" style="position:relative;display:inline-block;">
+                <button type="button" data-action-id="ACT_FILTER_INSIGHTS" onclick="actFilterInsights()" class="action">Filter Insights</button>
+                <div id="insights-filter-menu" class="hidden" style="position:absolute;top:100%;left:0;z-index:10;background:var(--color-surface);border:1px solid var(--color-outline-variant);border-radius:var(--radius-DEFAULT);box-shadow:0 4px 8px rgba(0,0,0,0.1);min-width:140px;">
+                  <button type="button" data-filter="all" onclick="actApplyInsightsFilter('all')" style="display:block;width:100%;text-align:left;background:none;border:none;padding:8px 12px;cursor:pointer;">All Activity</button>
+                  <button type="button" data-filter="recent" onclick="actApplyInsightsFilter('recent')" style="display:block;width:100%;text-align:left;background:none;border:none;padding:8px 12px;cursor:pointer;">Recent Only</button>
+                  <button type="button" data-filter="high" onclick="actApplyInsightsFilter('high')" style="display:block;width:100%;text-align:left;background:none;border:none;padding:8px 12px;cursor:pointer;">High Priority</button>
+                </div>
+              </div>
+              <button type="button" data-action-id="ACT_EXPORT_SUMMARY" onclick="actExportSummary()" class="action">Export Summary</button>
+              <button type="button" class="action" onclick="window.location.href='index.html'">View Records</button>
+            </div>
+            <h2>Recent Activity</h2>
+            <ul id="activity-list" class="activity-list"></ul>
+            <div id="insights-empty" class="empty-state hidden">
+              <h2>No activity yet</h2>
+              <p>Create a record to see insights and recent activity.</p>
+              <button type="button" onclick="window.location.href='index.html#editor'" class="primary">Create Record</button>
+              <button type="button" onclick="window.location.href='index.html'" class="action">View Records</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="assets/js/us-003/act_filter_insights.js"></script>
+    <script src="assets/js/us-003/act_export_summary.js"></script>
+    <script>
+      (function () {
+        'use strict';
+
+        const STORAGE_KEY = 'signaldesk-mini-state';
+
+        function loadRecords() {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (raw) {
+              const data = JSON.parse(raw);
+              if (Array.isArray(data.records)) return data.records;
+            }
+          } catch (err) {
+            const banner = document.getElementById('error-banner');
+            if (banner) {
+              banner.textContent = 'Saved data is corrupted and could not be loaded.';
+              banner.classList.remove('hidden');
+            }
+          }
+          return [];
+        }
+
+        function escapeHtml(str) {
+          return String(str).replace(/[&<>"']/g, function (m) {
+            return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]);
+          });
+        }
+
+        function formatTime(ts) {
+          if (!ts) return '—';
+          return new Date(ts).toLocaleString();
+        }
+
+        function computeMetrics(records) {
+          const total = records.length;
+          const open = records.filter(function (r) { return r.status === 'open'; }).length;
+          const openRate = total ? Math.round((open / total) * 100) : 0;
+          const closed = records.filter(function (r) { return r.status === 'closed'; });
+          const avgResolution = closed.length
+            ? Math.round(closed.reduce(function (sum, r) { return sum + (r.updatedAt - r.createdAt); }, 0) / closed.length / 3600000)
+            : 0;
+          return { total: total, openRate: openRate, avgResolution: avgResolution };
+        }
+
+        function renderActivity(records, filter) {
+          let activity = records.slice().sort(function (a, b) { return b.updatedAt - a.updatedAt; });
+          if (filter === 'recent') {
+            const oneDayAgo = Date.now() - 24 * 3600000;
+            activity = activity.filter(function (r) { return r.updatedAt >= oneDayAgo; });
+          } else if (filter === 'high') {
+            activity = activity.filter(function (r) { return r.priority === 'high'; });
+          }
+
+          const list = document.getElementById('activity-list');
+          const empty = document.getElementById('insights-empty');
+          if (!list) return;
+
+          if (activity.length === 0) {
+            list.innerHTML = '';
+            if (empty) empty.classList.remove('hidden');
+          } else {
+            if (empty) empty.classList.add('hidden');
+            list.innerHTML = activity.map(function (r) {
+              return '<li data-record-id="' + escapeHtml(r.id) + '">' +
+                '<strong>' + escapeHtml(r.title) + '</strong> — ' +
+                escapeHtml(r.status) + ' (' + escapeHtml(r.priority) + ') at ' + formatTime(r.updatedAt) +
+                ' <button type="button" class="action" disabled aria-label="More options">more_horiz</button>' +
+                '</li>';
+            }).join('');
+          }
+        }
+
+        window.insightsState = { records: loadRecords(), filter: 'all' };
+
+        window.renderInsightsMini = function (filter) {
+          window.insightsState.filter = filter || 'all';
+          const records = window.insightsState.records;
+          const metrics = computeMetrics(records);
+
+          const openRateEl = document.querySelector('[data-metric="open-rate"]');
+          const avgResolutionEl = document.querySelector('[data-metric="avg-resolution"]');
+          const totalEl = document.querySelector('[data-metric="total"]');
+          if (openRateEl) openRateEl.textContent = metrics.openRate + '%';
+          if (avgResolutionEl) avgResolutionEl.textContent = metrics.avgResolution + 'h';
+          if (totalEl) totalEl.textContent = metrics.total;
+
+          renderActivity(records, window.insightsState.filter);
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          window.renderInsightsMini('all');
+        });
+      })();
+    </script>
+  </body>
+</html>
