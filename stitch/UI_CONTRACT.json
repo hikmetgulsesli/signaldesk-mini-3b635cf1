@@ -1,0 +1,901 @@
+[
+  {
+    "screenId": "dd556658f6df4c269d20cf9e2b5990e9",
+    "screenTitle": "Empty and Error Recovery - SignalDesk Mini",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 112
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 116
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "Create New Record",
+        "href": "#",
+        "line": 171
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 136
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 143
+      },
+      {
+        "type": "button",
+        "label": "Retry Load",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "Clear Filters",
+        "line": 166
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 112
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 116
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "Create New Record",
+        "href": "#",
+        "line": 171
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 136
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 143
+      },
+      {
+        "type": "button",
+        "label": "Retry Load",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "Clear Filters",
+        "line": 166
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "1de793822b0e4cc7a042ceb188c56f4b",
+    "screenTitle": "Record Editor - SignalDesk Mini",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 113
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 127
+      },
+      {
+        "type": "link",
+        "label": "Back to Operations",
+        "href": "#",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 148
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 154
+      },
+      {
+        "type": "button",
+        "label": "Cancel",
+        "line": 240
+      },
+      {
+        "type": "button",
+        "label": "Save Record",
+        "line": 243
+      },
+      {
+        "type": "input",
+        "label": "Enter record title",
+        "inputType": "text",
+        "placeholder": "Enter record title",
+        "line": 186
+      },
+      {
+        "type": "input",
+        "label": "Enter details...",
+        "inputType": "textarea",
+        "placeholder": "Enter details...",
+        "line": 193
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 202
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 215
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 219
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 223
+      },
+      {
+        "type": "input",
+        "label": "e.g. urgent, frontend, Q3",
+        "inputType": "text",
+        "placeholder": "e.g. urgent, frontend, Q3",
+        "line": 234
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 180
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 113
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 127
+      },
+      {
+        "type": "link",
+        "label": "Back to Operations",
+        "href": "#",
+        "line": 172
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 148
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 154
+      },
+      {
+        "type": "button",
+        "label": "Cancel",
+        "line": 240
+      },
+      {
+        "type": "button",
+        "label": "Save Record",
+        "line": 243
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Enter record title",
+        "inputType": "text",
+        "placeholder": "Enter record title",
+        "line": 186
+      },
+      {
+        "type": "input",
+        "label": "Enter details...",
+        "inputType": "textarea",
+        "placeholder": "Enter details...",
+        "line": 193
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 202
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 215
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 219
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 223
+      },
+      {
+        "type": "input",
+        "label": "e.g. urgent, frontend, Q3",
+        "inputType": "text",
+        "placeholder": "e.g. urgent, frontend, Q3",
+        "line": 234
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 17,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "cc6b5637380b47af89dac895a0f67598",
+    "screenTitle": "Settings and Preferences - SignalDesk Mini",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 133
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 139
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 145
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 183
+      },
+      {
+        "type": "button",
+        "label": "Reset to Defaults",
+        "line": 200
+      },
+      {
+        "type": "button",
+        "label": "Changes",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "New",
+        "line": 318
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 344
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 347
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 362
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 365
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 380
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 383
+      },
+      {
+        "type": "button",
+        "label": "View Changelog",
+        "line": 405
+      },
+      {
+        "type": "input",
+        "label": "Search settings...",
+        "inputType": "text",
+        "placeholder": "Search settings...",
+        "line": 174
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 224
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 229
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 245
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 252
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 273
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 285
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 297
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 133
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 139
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 145
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 165
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 183
+      },
+      {
+        "type": "button",
+        "label": "Reset to Defaults",
+        "line": 200
+      },
+      {
+        "type": "button",
+        "label": "Changes",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "New",
+        "line": 318
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 344
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 347
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 362
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 365
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 380
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 383
+      },
+      {
+        "type": "button",
+        "label": "View Changelog",
+        "line": 405
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search settings...",
+        "inputType": "text",
+        "placeholder": "Search settings...",
+        "line": 174
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 224
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 229
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 245
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 252
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 273
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 285
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 297
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 25,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "51e2a834684b463e86b4662dfb4ca7ef",
+    "screenTitle": "Insights - SignalDesk Mini",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 117
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 156
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 160
+      },
+      {
+        "type": "button",
+        "label": "Filter Insights",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "Export Summary",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "View Records",
+        "line": 193
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 274
+      },
+      {
+        "type": "input",
+        "label": "Search...",
+        "inputType": "text",
+        "placeholder": "Search...",
+        "line": 148
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 117
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 127
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 156
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 160
+      },
+      {
+        "type": "button",
+        "label": "Filter Insights",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "Export Summary",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "View Records",
+        "line": 193
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 274
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search...",
+        "inputType": "text",
+        "placeholder": "Search...",
+        "line": 148
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 11,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "93e9d3999529407e9a124a91c6dfcbbb",
+    "screenTitle": "Record Operations - SignalDesk Mini",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 112
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 118
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 124
+      },
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 156
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 162
+      },
+      {
+        "type": "button",
+        "label": "All Status",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "Priority: High",
+        "line": 200
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 277
+      },
+      {
+        "type": "button",
+        "label": "Update Status",
+        "line": 322
+      },
+      {
+        "type": "button",
+        "label": "Acknowledge",
+        "line": 325
+      },
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 149
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 112
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 118
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 124
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "help_outline",
+        "line": 156
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 162
+      },
+      {
+        "type": "button",
+        "label": "All Status",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "Priority: High",
+        "line": 200
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 277
+      },
+      {
+        "type": "button",
+        "label": "Update Status",
+        "line": 322
+      },
+      {
+        "type": "button",
+        "label": "Acknowledge",
+        "line": 325
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 149
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 12,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
