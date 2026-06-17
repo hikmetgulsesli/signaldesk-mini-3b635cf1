@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings and Preferences - SignalDesk Mini</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main data-setfarm-root="settings" data-testid="setfarm-app-root" class="app-shell relative h-screen w-full overflow-hidden">
+      <header class="app-topbar">
+        <button type="button" data-action-id="ACT_CLICK_ACTION" aria-label="Menu" class="action" onclick="actMenuToggle()">menu</button>
+        <div class="brand">SignalDesk Mini</div>
+        <nav class="app-nav" aria-label="Primary">
+          <button type="button" data-action-id="ACT_OPERATIONS" onclick="window.location.href='index.html'">Operations</button>
+          <button type="button" data-action-id="ACT_INSIGHTS" onclick="window.location.href='insights-signaldesk-mini.html'">Insights</button>
+          <button type="button" data-action-id="ACT_SETTINGS" class="active" onclick="/* current view */">Settings</button>
+        </nav>
+        <div class="app-actions">
+          <input type="search" data-action-id="ACT_SEARCH_SETTINGS" placeholder="Search settings..." aria-label="Search settings" oninput="actFilterSettings(this.value)" />
+          <button type="button" data-action-id="ACT_CREATE" class="primary" onclick="window.location.href='index.html#editor'">Create Record</button>
+          <button type="button" data-action-id="ACT_NAVIGATE" aria-label="Notifications" disabled class="disabled-action">notifications</button>
+          <button type="button" data-action-id="ACT_HELP" aria-label="Help" disabled class="disabled-action">help_outline</button>
+        </div>
+      </header>
+
+      <section class="app-stage">
+        <div id="error-banner" class="error-banner hidden" role="alert"></div>
+        <div id="save-feedback" class="error-banner hidden" role="status"></div>
+
+        <!-- Settings -->
+        <section id="view-settings" class="view">
+          <div class="panel">
+            <div class="filter-bar" style="justify-content: space-between; flex-wrap: wrap;">
+              <h2>Settings and Preferences</h2>
+              <button type="button" data-action-id="ACT_RETRY_LOAD" class="action" onclick="actRetryLoad()">Retry Load</button>
+            </div>
+
+            <form class="editor-form" id="settings-form" onsubmit="actSavePreferences(); return false;">
+              <div class="form-row">
+                <span>Density</span>
+                <div class="radio-group">
+                  <label><input type="radio" name="pref-density" data-pref="density" value="compact" /> Compact</label>
+                  <label><input type="radio" name="pref-density" data-pref="density" value="comfortable" checked /> Comfortable</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <span>Theme</span>
+                <div class="radio-group">
+                  <label><input type="radio" name="pref-theme" data-pref="theme" value="light" /> Light</label>
+                  <label><input type="radio" name="pref-theme" data-pref="theme" value="dark" /> Dark</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <span>Sidebar</span>
+                <div class="radio-group">
+                  <label><input type="radio" name="pref-sidebar" data-pref="sidebar" value="collapsed" /> Collapsed</label>
+                  <label><input type="radio" name="pref-sidebar" data-pref="sidebar" value="expanded" checked /> Expanded</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <span>Notifications</span>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" data-pref="notifications" checked /> Enable notifications</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <span>Display</span>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" data-pref="tooltips" checked /> Show tooltips</label>
+                  <label><input type="checkbox" data-pref="compactTables" /> Compact tables</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="pref-default-view">Default View</label>
+                <select id="pref-default-view" data-pref="defaultView">
+                  <option value="operations">Operations</option>
+                  <option value="insights">Insights</option>
+                  <option value="settings">Settings</option>
+                </select>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" data-action-id="ACT_SAVE_PREFERENCES" class="primary">Save Preferences</button>
+                <button type="button" data-action-id="ACT_RESET_PREFERENCES" class="action" onclick="actResetPreferences()">Reset to Defaults</button>
+                <button type="button" data-action-id="ACT_VIEW_CHANGES" class="action" onclick="actToggleChanges()">Changes</button>
+              </div>
+            </form>
+          </div>
+
+          <div id="changes-panel" class="panel hidden">
+            <h2>Pending Changes</h2>
+            <p id="changes-summary">No unsaved changes detected.</p>
+          </div>
+
+          <div class="panel">
+            <div class="filter-bar" style="justify-content: space-between;">
+              <h2>Saved Categories</h2>
+              <button type="button" data-action-id="ACT_SETTINGS_NEW" class="primary" onclick="actNewCategory()">New</button>
+            </div>
+            <table class="record-table" id="categories-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="categories-body"></tbody>
+            </table>
+            <div id="categories-empty" class="empty-state hidden">
+              <h2>No categories</h2>
+              <p>Add a category to organize your filters.</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <button type="button" data-action-id="ACT_VIEW_CHANGELOG" class="action" onclick="actToggleChangelog()">View Changelog</button>
+            <ul id="changelog-list" class="activity-list hidden" style="margin-top: 12px;">
+              <li>Initial settings screen created.</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="assets/js/us-004/act_save_preferences.js"></script>
+    <script src="assets/js/us-004/act_retry_load.js"></script>
+    <script>
+      (function () {
+        'use strict';
+
+        const STORAGE_KEY = 'signaldesk-mini-state';
+        const defaultPreferences = {
+          density: 'comfortable',
+          sidebar: 'expanded',
+          theme: 'system',
+          notifications: true,
+          tooltips: true,
+          compactTables: false,
+          defaultView: 'operations'
+        };
+
+        let categories = [
+          { id: 'cat-1', name: 'Default' },
+          { id: 'cat-2', name: 'High Priority' },
+          { id: 'cat-3', name: 'Recent' }
+        ];
+
+        function loadSnapshot() {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (raw) return JSON.parse(raw);
+          } catch (err) {
+            const banner = document.getElementById('error-banner');
+            if (banner) {
+              banner.textContent = 'Saved preferences could not be loaded.';
+              banner.classList.remove('hidden');
+            }
+          }
+          return {};
+        }
+
+        function getPreferences() {
+          const snapshot = loadSnapshot();
+          return Object.assign({}, defaultPreferences, snapshot.preferences || {});
+        }
+
+        function setInput(name, value) {
+          document.querySelectorAll('[name="' + name + '"]').forEach(function (input) {
+            input.checked = (input.value === String(value));
+          });
+        }
+
+        function setCheckbox(selector, value) {
+          const el = document.querySelector(selector);
+          if (el) el.checked = !!value;
+        }
+
+        function renderPreferences() {
+          const prefs = getPreferences();
+          setInput('pref-density', prefs.density);
+          setInput('pref-sidebar', prefs.sidebar);
+          setInput('pref-theme', prefs.theme || 'system');
+          setCheckbox('[data-pref="notifications"]', prefs.notifications);
+          setCheckbox('[data-pref="tooltips"]', prefs.tooltips);
+          setCheckbox('[data-pref="compactTables"]', prefs.compactTables);
+          const viewSel = document.getElementById('pref-default-view');
+          if (viewSel) viewSel.value = prefs.defaultView;
+        }
+
+        function renderCategories() {
+          const body = document.getElementById('categories-body');
+          const empty = document.getElementById('categories-empty');
+          const table = document.getElementById('categories-table');
+          if (!body) return;
+
+          if (categories.length === 0) {
+            body.innerHTML = '';
+            if (table) table.classList.add('hidden');
+            if (empty) empty.classList.remove('hidden');
+            return;
+          }
+
+          if (table) table.classList.remove('hidden');
+          if (empty) empty.classList.add('hidden');
+
+          body.innerHTML = categories.map(function (cat) {
+            return '<tr>' +
+              '<td>' + cat.name + '</td>' +
+              '<td>' +
+                '<button type="button" data-action-id="ACT_SETTINGS_EDIT" class="action" onclick="actEditCategory(\'' + cat.id + '\')">Edit</button> ' +
+                '<button type="button" data-action-id="ACT_SETTINGS_DELETE" class="action danger" onclick="actDeleteCategory(\'' + cat.id + '\')">Delete</button>' +
+              '</td>' +
+            '</tr>';
+          }).join('');
+        }
+
+        window.actMenuToggle = function () {
+          const nav = document.querySelector('.app-nav');
+          if (nav) nav.classList.toggle('hidden');
+        };
+
+        window.actFilterSettings = function (query) {
+          const q = (query || '').toLowerCase();
+          document.querySelectorAll('.panel').forEach(function (panel) {
+            if (q === '') {
+              panel.style.display = '';
+              return;
+            }
+            const text = panel.textContent || '';
+            panel.style.display = text.toLowerCase().includes(q) ? '' : 'none';
+          });
+        };
+
+        window.actResetPreferences = function () {
+          const snapshot = loadSnapshot();
+          snapshot.preferences = Object.assign({}, defaultPreferences);
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
+          } catch (err) {
+            // ignore
+          }
+          renderPreferences();
+          const feedback = document.getElementById('save-feedback');
+          if (feedback) {
+            feedback.textContent = 'Preferences reset to defaults.';
+            feedback.classList.remove('hidden');
+            setTimeout(function () { feedback.classList.add('hidden'); }, 3000);
+          }
+        };
+
+        window.actToggleChanges = function () {
+          const panel = document.getElementById('changes-panel');
+          if (!panel) return;
+          panel.classList.toggle('hidden');
+          const summary = document.getElementById('changes-summary');
+          if (summary && !panel.classList.contains('hidden')) {
+            summary.textContent = 'Preferences will be saved when you click Save Preferences.';
+          }
+        };
+
+        window.actToggleChangelog = function () {
+          const list = document.getElementById('changelog-list');
+          if (list) list.classList.toggle('hidden');
+        };
+
+        window.actNewCategory = function () {
+          const name = window.prompt('Category name:');
+          if (!name) return;
+          categories.push({ id: 'cat-' + Date.now(), name: name });
+          renderCategories();
+        };
+
+        window.actEditCategory = function (id) {
+          const cat = categories.find(function (c) { return c.id === id; });
+          if (!cat) return;
+          const name = window.prompt('Rename category:', cat.name);
+          if (name === null) return;
+          cat.name = name || cat.name;
+          renderCategories();
+        };
+
+        window.actDeleteCategory = function (id) {
+          if (!window.confirm('Delete this category?')) return;
+          categories = categories.filter(function (c) { return c.id !== id; });
+          renderCategories();
+        };
+
+        document.addEventListener('preferences:saved', function () {
+          const changes = document.getElementById('changes-panel');
+          if (changes) changes.classList.add('hidden');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+          renderPreferences();
+          renderCategories();
+        });
+      })();
+    </script>
+  </body>
+</html>
