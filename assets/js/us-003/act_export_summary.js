@@ -15,7 +15,7 @@
       a.href = url;
       a.download = 'signaldesk-summary.json';
       a.click();
-      URL.revokeObjectURL(url);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 100);
     } catch (_) {
       // Export is best-effort; ignore environments that block downloads.
     }

@@ -102,7 +102,8 @@
 
         function formatTime(ts) {
           if (!ts) return '—';
-          return new Date(ts).toLocaleString();
+          const d = new Date(ts);
+          return isNaN(d.getTime()) ? '—' : d.toLocaleString();
         }
 
         function computeMetrics(records) {
@@ -111,16 +112,16 @@
           const openRate = total ? Math.round((open / total) * 100) : 0;
           const closed = records.filter(function (r) { return r.status === 'closed'; });
           const avgResolution = closed.length
-            ? Math.round(closed.reduce(function (sum, r) { return sum + (r.updatedAt - r.createdAt); }, 0) / closed.length / 3600000)
+            ? Math.round(closed.reduce(function (sum, r) { const diff = new Date(r.updatedAt) - new Date(r.createdAt); return sum + (isNaN(diff) ? 0 : diff); }, 0) / closed.length / 3600000)
             : 0;
           return { total: total, openRate: openRate, avgResolution: avgResolution };
         }
 
         function renderActivity(records, filter) {
-          let activity = records.slice().sort(function (a, b) { return b.updatedAt - a.updatedAt; });
+          let activity = records.slice().sort(function (a, b) { const tA = new Date(a.updatedAt).getTime() || 0; const tB = new Date(b.updatedAt).getTime() || 0; return tB - tA; });
           if (filter === 'recent') {
             const oneDayAgo = Date.now() - 24 * 3600000;
-            activity = activity.filter(function (r) { return r.updatedAt >= oneDayAgo; });
+            activity = activity.filter(function (r) { const t = new Date(r.updatedAt).getTime(); return !isNaN(t) && t >= oneDayAgo; });
           } else if (filter === 'high') {
             activity = activity.filter(function (r) { return r.priority === 'high'; });
           }
