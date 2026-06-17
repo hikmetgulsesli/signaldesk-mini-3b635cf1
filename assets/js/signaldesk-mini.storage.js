@@ -59,8 +59,9 @@
       store.dispatch({ type: 'HYDRATE', saved: {} });
     }
 
-    // Persist every state change
-    store.subscribe(function (state) {
+    // Persist every state change except TICK
+    store.subscribe(function (state, action) {
+      if (action && action.type === 'TICK') return;
       saveStorage(state);
     });
 

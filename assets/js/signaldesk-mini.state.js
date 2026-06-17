@@ -422,6 +422,9 @@
         case 'ACT_SAVE_PREFERENCES':
           actions.savePreferences(readPreferences());
           break;
+        case 'ACT_RESET_PREFERENCES':
+          actions.resetPreferences();
+          break;
         case 'ACT_FILTER_INSIGHTS':
           // handled by select change
           break;
