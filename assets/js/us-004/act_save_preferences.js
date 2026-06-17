@@ -7,7 +7,12 @@
   function getSharedSnapshot() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') {
+          return parsed;
+        }
+      }
     } catch (err) {
       // Fall through to empty snapshot
     }
@@ -48,7 +53,8 @@
     const feedback = document.getElementById('save-feedback');
     if (feedback) {
       feedback.textContent = message;
-      feedback.classList.toggle('error-banner', !!isError);
+      feedback.classList.add('error-banner');
+      feedback.classList.toggle('error-state', !!isError);
       feedback.classList.remove('hidden');
       setTimeout(function () { feedback.classList.add('hidden'); }, 3000);
     } else if (banner) {

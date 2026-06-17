@@ -12,14 +12,14 @@
         <button type="button" data-action-id="ACT_CLICK_ACTION" aria-label="Menu" class="action" onclick="actMenuToggle()">menu</button>
         <div class="brand">SignalDesk Mini</div>
         <nav class="app-nav" aria-label="Primary">
-          <button type="button" data-action-id="ACT_OPERATIONS" onclick="window.location.href='index.html'">Operations</button>
-          <button type="button" data-action-id="ACT_INSIGHTS" onclick="window.location.href='insights-signaldesk-mini.html'">Insights</button>
-          <button type="button" data-action-id="ACT_SETTINGS" class="active" onclick="/* current view */">Settings</button>
+          <button type="button" data-action-id="ACT_NAV_OPERATIONS" onclick="window.location.href='index.html'">Operations</button>
+          <button type="button" data-action-id="ACT_NAV_INSIGHTS" onclick="window.location.href='insights-signaldesk-mini.html'">Insights</button>
+          <button type="button" data-action-id="ACT_NAV_SETTINGS" class="active" onclick="/* current view */">Settings</button>
         </nav>
         <div class="app-actions">
           <input type="search" data-action-id="ACT_SEARCH_SETTINGS" placeholder="Search settings..." aria-label="Search settings" oninput="actFilterSettings(this.value)" />
-          <button type="button" data-action-id="ACT_CREATE" class="primary" onclick="window.location.href='index.html#editor'">Create Record</button>
-          <button type="button" data-action-id="ACT_NAVIGATE" aria-label="Notifications" disabled class="disabled-action">notifications</button>
+          <button type="button" data-action-id="ACT_CREATE_RECORD" class="primary" onclick="window.location.href='index.html#editor'">Create Record</button>
+          <button type="button" data-action-id="ACT_NOTIFICATIONS" aria-label="Notifications" disabled class="disabled-action">notifications</button>
           <button type="button" data-action-id="ACT_HELP" aria-label="Help" disabled class="disabled-action">help_outline</button>
         </div>
       </header>
@@ -154,7 +154,12 @@
         function loadSnapshot() {
           try {
             const raw = localStorage.getItem(STORAGE_KEY);
-            if (raw) return JSON.parse(raw);
+            if (raw) {
+              const parsed = JSON.parse(raw);
+              if (parsed && typeof parsed === 'object') {
+                return parsed;
+              }
+            }
           } catch (err) {
             const banner = document.getElementById('error-banner');
             if (banner) {
@@ -209,15 +214,34 @@
           if (table) table.classList.remove('hidden');
           if (empty) empty.classList.add('hidden');
 
-          body.innerHTML = categories.map(function (cat) {
-            return '<tr>' +
-              '<td>' + cat.name + '</td>' +
-              '<td>' +
-                '<button type="button" data-action-id="ACT_SETTINGS_EDIT" class="action" onclick="actEditCategory(\'' + cat.id + '\')">Edit</button> ' +
-                '<button type="button" data-action-id="ACT_SETTINGS_DELETE" class="action danger" onclick="actDeleteCategory(\'' + cat.id + '\')">Delete</button>' +
-              '</td>' +
-            '</tr>';
-          }).join('');
+          body.innerHTML = '';
+          categories.forEach(function (cat) {
+            const tr = document.createElement('tr');
+            const tdName = document.createElement('td');
+            tdName.textContent = cat.name;
+            const tdActions = document.createElement('td');
+
+            const editBtn = document.createElement('button');
+            editBtn.type = 'button';
+            editBtn.setAttribute('data-action-id', 'ACT_SETTINGS_EDIT');
+            editBtn.className = 'action';
+            editBtn.textContent = 'Edit';
+            editBtn.onclick = function () { actEditCategory(cat.id); };
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.type = 'button';
+            deleteBtn.setAttribute('data-action-id', 'ACT_SETTINGS_DELETE');
+            deleteBtn.className = 'action danger';
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.onclick = function () { actDeleteCategory(cat.id); };
+
+            tdActions.appendChild(editBtn);
+            tdActions.appendChild(document.createTextNode(' '));
+            tdActions.appendChild(deleteBtn);
+            tr.appendChild(tdName);
+            tr.appendChild(tdActions);
+            body.appendChild(tr);
+          });
         }
 
         window.actMenuToggle = function () {
