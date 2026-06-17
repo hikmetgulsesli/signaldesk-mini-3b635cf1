@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SignalDesk Mini - Record Operations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2e3",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-primary-fixed": "#111c2d",
+                        "outline-variant": "#c5c6cd",
+                        "surface-tint": "#545f73",
+                        "primary-container": "#1e293b",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fbf8fa",
+                        "on-surface": "#1b1b1d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45474c",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "inverse-surface": "#303032",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-secondary-container": "#54647a",
+                        "surface-dim": "#dcd9db",
+                        "error": "#ba1a1a",
+                        "background": "#fbf8fa",
+                        "surface-container": "#f0edef",
+                        "surface-bright": "#fbf8fa",
+                        "primary": "#091426",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2e3",
+                        "primary-fixed": "#d8e3fb",
+                        "on-tertiary-container": "#a38c6a",
+                        "surface-container-high": "#eae7e9",
+                        "outline": "#75777d",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-primary-container": "#8590a6",
+                        "tertiary-container": "#35260c",
+                        "on-background": "#1b1b1d",
+                        "tertiary": "#1e1200",
+                        "inverse-primary": "#bcc7de",
+                        "on-tertiary-fixed": "#271902",
+                        "tertiary-fixed": "#fadfb8",
+                        "surface-container-low": "#f5f3f4",
+                        "secondary": "#505f76",
+                        "primary-fixed-dim": "#bcc7de",
+                        "secondary-container": "#d0e1fb",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#564427",
+                        "tertiary-fixed-dim": "#ddc39d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "element-gap-sm": "8px",
+                        "container-padding": "24px",
+                        "element-gap-md": "12px",
+                        "unit": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "data-tabular": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-tabular": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<nav class="bg-surface dark:bg-on-surface h-screen w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline flex flex-col h-full py-container-padding z-50">
+<div class="px-container-padding mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-surface">SignalDesk</h1>
+<p class="font-body-sm text-body-sm text-secondary">Mini Admin</p>
+</div>
+<ul class="flex-1 space-y-2">
+<!-- Active: Operations -->
+<li>
+<a class="flex items-center px-container-padding py-2 text-primary dark:text-primary-fixed font-bold border-r-2 border-primary dark:border-primary-fixed hover:bg-surface-container transition-colors opacity-90 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined mr-3">analytics</span>
+<span class="font-body-md text-body-md">Operations</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-container-padding py-2 text-secondary dark:text-secondary-fixed opacity-70 hover:opacity-100 hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">monitoring</span>
+<span class="font-body-md text-body-md">Insights</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-container-padding py-2 text-secondary dark:text-secondary-fixed opacity-70 hover:opacity-100 hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</li>
+</ul>
+<div class="px-container-padding mt-auto">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold mr-3">
+                    JD
+                </div>
+<div>
+<p class="font-body-md text-body-md font-semibold">User profile</p>
+<p class="font-body-sm text-body-sm text-secondary">Operator</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-surface docked full-width top-0 sticky z-40 border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-container-padding h-14">
+<div class="flex items-center w-1/3">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-10 py-1.5 font-body-sm text-body-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-surface-container-high transition-all" placeholder="Search records..." type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-center w-1/3">
+<h2 class="font-headline-md text-headline-md font-black text-primary dark:text-primary-fixed">SignalDesk Mini</h2>
+</div>
+<div class="flex items-center justify-end w-1/3 space-x-element-gap-md">
+<button class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="bg-primary-container text-on-tertiary font-body-sm text-body-sm font-semibold px-4 py-1.5 rounded hover:bg-primary transition-colors flex items-center">
+                    Create Record
+                </button>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+<img alt="Operator Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClE4M7Kq3UFNt-mEMwhMnr7_xXbwJElpxAsuCq5PW-e25CL3pd-SIPDuCFXzHhu3rTimTgJLhgHOmM-XPEzEZvEUlMMWhdG3dWybiGg5xTMdFx33TBDBpPGt35Gn_HyN1yeOGFrUFiGTMfg011uGWXwX062y1merHuzxTA2oxhUxjJ0xyX10tLfBjjr9qzz6JEUItd2qdPVt8qpi6S4PYdRTWpz74QDywWwTFvFhfMc78F3vf5nLfE-wsD_xcXARkNjZRe8p9LExc"/>
+</div>
+</div>
+</header>
+<!-- Page Content Grid -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Metrics & Table -->
+<div class="flex-1 overflow-y-auto p-container-padding flex flex-col gap-container-padding">
+<!-- Metrics Summary -->
+<div class="grid grid-cols-3 gap-element-gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col justify-center shadow-sm">
+<span class="font-label-caps text-label-caps text-secondary mb-1">Total Records</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">1,248</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col justify-center shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<span class="font-label-caps text-label-caps text-secondary mb-1">Active Incidents</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">24</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col justify-center shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-fixed-dim"></div>
+<span class="font-label-caps text-label-caps text-secondary mb-1">Resolved Today</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">86</span>
+</div>
+</div>
+<!-- Table Container -->
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm flex flex-col overflow-hidden">
+<!-- Toolbar -->
+<div class="p-3 border-b border-outline-variant bg-surface flex justify-between items-center">
+<div class="flex items-center space-x-element-gap-sm">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm px-3 py-1.5 rounded flex items-center hover:bg-surface-container transition-colors">
+                                All Status
+                                <span class="material-symbols-outlined text-[16px] ml-1">expand_more</span>
+</button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm px-3 py-1.5 rounded flex items-center hover:bg-surface-container transition-colors">
+                                Priority: High
+                                <span class="material-symbols-outlined text-[16px] ml-1">expand_more</span>
+</button>
+</div>
+<div class="text-secondary font-body-sm text-body-sm">
+                            Showing 1-24 of 24
+                        </div>
+</div>
+<!-- Table -->
+<div class="flex-1 overflow-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container font-data-tabular text-data-tabular text-on-surface sticky top-0 z-10 border-b border-outline-variant">
+<tr>
+<th class="p-3 font-semibold">ID</th>
+<th class="p-3 font-semibold">Title</th>
+<th class="p-3 font-semibold">Status</th>
+<th class="p-3 font-semibold">Priority</th>
+<th class="p-3 font-semibold">Last Updated</th>
+</tr>
+</thead>
+<tbody class="font-data-tabular text-data-tabular text-on-surface divide-y divide-outline-variant">
+<!-- Selected Row -->
+<tr class="hover:bg-surface-container-low transition-colors bg-secondary-fixed opacity-90 cursor-pointer">
+<td class="p-3 font-semibold">#1042</td>
+<td class="p-3">Node synchronization failure</td>
+<td class="p-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-caps text-[10px] bg-error-container text-on-error-container">
+                                            Active
+                                        </span>
+</td>
+<td class="p-3">
+<span class="text-error font-bold">P1</span>
+</td>
+<td class="p-3 text-secondary">2 mins ago</td>
+</tr>
+<!-- Other Rows -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="p-3">#1041</td>
+<td class="p-3">Database latency spike</td>
+<td class="p-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-caps text-[10px] bg-surface-variant text-on-surface-variant">
+                                            Investigating
+                                        </span>
+</td>
+<td class="p-3 font-semibold">P2</td>
+<td class="p-3 text-secondary">15 mins ago</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="p-3">#1040</td>
+<td class="p-3">API gateway timeout</td>
+<td class="p-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-caps text-[10px] bg-secondary-fixed text-on-secondary-fixed">
+                                            Resolved
+                                        </span>
+</td>
+<td class="p-3">P3</td>
+<td class="p-3 text-secondary">1 hour ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Panel: Details Drawer -->
+<aside class="w-96 bg-surface-container-lowest border-l border-outline-variant flex flex-col shadow-[-4px_0_6px_-1px_rgb(0,0,0,0.05)]">
+<!-- Drawer Header -->
+<div class="p-4 border-b border-outline-variant flex justify-between items-start">
+<div>
+<div class="flex items-center space-x-2 mb-1">
+<span class="font-data-tabular text-data-tabular font-bold text-secondary">#1042</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-caps text-[10px] bg-error-container text-on-error-container">
+                                Active
+                            </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Node synchronization failure</h3>
+</div>
+<button class="text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Drawer Content -->
+<div class="flex-1 overflow-y-auto p-4 space-y-6">
+<!-- Attributes -->
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">Service Impact</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Core Database</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">Environment</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Production (US-East)</p>
+</div>
+</div>
+<!-- Description -->
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">Description</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface p-3 rounded border border-outline-variant">
+                            Primary and secondary nodes in cluster alpha-01 are failing to synchronize. Replication lag is increasing exponentially over the last 15 minutes. Immediate intervention required to prevent data staleness on read replicas.
+                        </p>
+</div>
+<!-- Activity Log -->
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-3">Activity Log</p>
+<div class="space-y-4 relative before:absolute before:inset-0 before:ml-2.5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-outline-variant">
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-6 h-6 rounded-full border border-surface-container-lowest bg-primary text-on-tertiary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+</div>
+<div class="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] p-3 rounded border border-outline-variant bg-surface-container-lowest shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<p class="font-body-sm text-body-sm font-semibold">System Alert</p>
+<time class="font-label-caps text-[10px] text-secondary">2m ago</time>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Automated alert triggered for replication lag &gt; 500ms.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-4 border-t border-outline-variant bg-surface flex space-x-3">
+<button class="flex-1 bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm font-semibold py-2 rounded hover:bg-surface-container transition-colors shadow-sm">
+                        Update Status
+                    </button>
+<button class="flex-1 bg-primary-container text-on-tertiary font-body-sm text-body-sm font-semibold py-2 rounded hover:bg-primary transition-colors shadow-sm">
+                        Acknowledge
+                    </button>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

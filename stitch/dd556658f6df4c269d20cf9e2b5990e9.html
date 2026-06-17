@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SignalDesk Mini - Error / Empty State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2e3",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-primary-fixed": "#111c2d",
+                        "outline-variant": "#c5c6cd",
+                        "surface-tint": "#545f73",
+                        "primary-container": "#1e293b",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fbf8fa",
+                        "on-surface": "#1b1b1d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45474c",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "inverse-surface": "#303032",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-secondary-container": "#54647a",
+                        "surface-dim": "#dcd9db",
+                        "error": "#ba1a1a",
+                        "background": "#fbf8fa",
+                        "surface-container": "#f0edef",
+                        "surface-bright": "#fbf8fa",
+                        "primary": "#091426",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2e3",
+                        "primary-fixed": "#d8e3fb",
+                        "on-tertiary-container": "#a38c6a",
+                        "surface-container-high": "#eae7e9",
+                        "outline": "#75777d",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-primary-container": "#8590a6",
+                        "tertiary-container": "#35260c",
+                        "on-background": "#1b1b1d",
+                        "tertiary": "#1e1200",
+                        "inverse-primary": "#bcc7de",
+                        "on-tertiary-fixed": "#271902",
+                        "tertiary-fixed": "#fadfb8",
+                        "surface-container-low": "#f5f3f4",
+                        "secondary": "#505f76",
+                        "primary-fixed-dim": "#bcc7de",
+                        "secondary-container": "#d0e1fb",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#564427",
+                        "tertiary-fixed-dim": "#ddc39d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "element-gap-sm": "8px",
+                        "container-padding": "24px",
+                        "element-gap-md": "12px",
+                        "unit": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "data-tabular": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-tabular": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant bg-surface flex flex-col py-container-padding z-50">
+<div class="px-container-padding mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">SignalDesk</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-70">Mini Admin</p>
+</div>
+<div class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 rounded font-body-md text-body-md text-primary font-bold border-r-2 border-primary bg-surface hover:bg-surface-container transition-colors opacity-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Operations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded font-body-md text-body-md text-secondary opacity-70 hover:opacity-100 hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded font-body-md text-body-md text-secondary opacity-70 hover:opacity-100 hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-container-padding h-14 max-w-[calc(100%-16rem)] bg-surface border-b border-outline-variant docked full-width top-0 sticky z-40 fixed">
+<div class="flex items-center gap-4">
+<div class="font-headline-md text-headline-md font-black text-primary">SignalDesk Mini</div>
+</div>
+<!-- Search on left logic omitted as it's typically an input, we just place the product name and actions as per JSON -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="p-2 text-secondary hover:text-primary transition-colors hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-secondary hover:text-primary transition-colors hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<button class="bg-primary-container text-on-tertiary px-4 py-1.5 rounded font-data-tabular text-data-tabular hover:opacity-90 transition-opacity">
+                    Create Record
+                </button>
+<div class="h-8 w-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant flex-shrink-0">
+<!-- Placeholder avatar -->
+<img alt="Operator Avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuFV0k6rn10ltKJh-isPpMGwBNgHD9EQRIG32lk5desTR2Ngs-X0HvO0Bqd6hfOwTl3mfzEW-uGR5KBXdnqREL4hBsVM1Zk7qmINaZqH-XxJ4mZIL7FfMbiLDmMnOn2t69lwJYLqR2A24cFn236QpQONYA2ZEhldJ5j8dsw0huvMu3L6TkywuajOZXSa4KhMBnM1ogrFWtAF8bYsBfwvfvwyW9ntbrF8Rj-RSGa_WKMBdy4ropIaMX7gLafmLq06vAx4kxlCTJEpw"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area for Error/Empty State -->
+<main class="flex-1 p-container-padding flex items-center justify-center bg-background">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-lg border border-outline-variant p-8 flex flex-col items-center text-center" style="box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);">
+<div class="w-16 h-16 rounded-full bg-error-container flex items-center justify-center text-on-error-container mb-6">
+<span class="material-symbols-outlined text-4xl" data-icon="wifi_off">wifi_off</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Connection Error</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-sm">
+                    We couldn't retrieve any records at this time. Please check your connection or adjust your filters and try again.
+                </p>
+<div class="flex gap-4 w-full justify-center">
+<button class="px-6 py-2 bg-primary-container text-on-tertiary rounded font-data-tabular text-data-tabular font-bold hover:opacity-90 transition-opacity">
+                        Retry Load
+                    </button>
+<button class="px-6 py-2 bg-surface-container-lowest text-on-surface border border-outline-variant rounded font-data-tabular text-data-tabular hover:bg-surface-container-low transition-colors">
+                        Clear Filters
+                    </button>
+</div>
+<div class="mt-6 pt-6 border-t border-outline-variant w-full">
+<a class="text-primary hover:text-primary-fixed transition-colors font-body-sm text-body-sm flex items-center justify-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                        Create New Record
+                    </a>
+</div>
+</div>
+</main>
+</div>
+</body></html>

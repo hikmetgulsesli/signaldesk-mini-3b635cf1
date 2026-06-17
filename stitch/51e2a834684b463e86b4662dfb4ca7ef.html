@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SignalDesk Mini - Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2e3",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-primary-fixed": "#111c2d",
+                        "outline-variant": "#c5c6cd",
+                        "surface-tint": "#545f73",
+                        "primary-container": "#1e293b",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fbf8fa",
+                        "on-surface": "#1b1b1d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45474c",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "inverse-surface": "#303032",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-secondary-container": "#54647a",
+                        "surface-dim": "#dcd9db",
+                        "error": "#ba1a1a",
+                        "background": "#fbf8fa",
+                        "surface-container": "#f0edef",
+                        "surface-bright": "#fbf8fa",
+                        "primary": "#091426",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2e3",
+                        "primary-fixed": "#d8e3fb",
+                        "on-tertiary-container": "#a38c6a",
+                        "surface-container-high": "#eae7e9",
+                        "outline": "#75777d",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-primary-container": "#8590a6",
+                        "tertiary-container": "#35260c",
+                        "on-background": "#1b1b1d",
+                        "tertiary": "#1e1200",
+                        "inverse-primary": "#bcc7de",
+                        "on-tertiary-fixed": "#271902",
+                        "tertiary-fixed": "#fadfb8",
+                        "surface-container-low": "#f5f3f4",
+                        "secondary": "#505f76",
+                        "primary-fixed-dim": "#bcc7de",
+                        "secondary-container": "#d0e1fb",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#564427",
+                        "tertiary-fixed-dim": "#ddc39d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "element-gap-sm": "8px",
+                        "container-padding": "24px",
+                        "element-gap-md": "12px",
+                        "unit": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "data-tabular": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-tabular": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #F8FAFC; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="bg-surface text-primary font-body-md h-screen w-64 fixed left-0 top-0 border-r border-outline-variant flex flex-col py-container-padding z-50">
+<div class="px-container-padding mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">SignalDesk</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mini Admin</p>
+</div>
+<div class="flex-1 flex flex-col gap-element-gap-sm px-4">
+<!-- Operations (Inactive) -->
+<a class="flex items-center gap-element-gap-md px-4 py-2 rounded-DEFAULT text-secondary opacity-70 hover:opacity-100 hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-body-md text-body-md">Operations</span>
+</a>
+<!-- Insights (Active) -->
+<a class="flex items-center gap-element-gap-md px-4 py-2 text-primary font-bold border-r-2 border-primary bg-surface-container-low opacity-90 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined fill" data-icon="monitoring">monitoring</span>
+<span class="font-body-md text-body-md">Insights</span>
+</a>
+<!-- Settings (Inactive) -->
+<a class="flex items-center gap-element-gap-md px-4 py-2 rounded-DEFAULT text-secondary opacity-70 hover:opacity-100 hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+<div class="px-container-padding mt-auto">
+<div class="flex items-center gap-element-gap-md">
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A small, circular avatar portrait of a professional operator in a well-lit studio. The lighting is bright and clean, fitting a modern light-mode interface. The color palette is neutral with soft tones. The image conveys reliability and focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1s3UbTOKY4zoBCseGfG9BYfxD_HRz1wyeGUeb9MMFyB9oyM816oyDNShuq6a31xl6c_d2Cg_3txCTErqmdbtxej8Mr4VGL_chPYaXf7bi4KqozC50qX3ODVJWGFrebRIGgCKnsSauX7DhIZl8t644LWYCrz5fV8GHWoYdx0ULECTZ0Cz1qtPhh1b097bou-1BdORAgQ1EbOWMICWoYjoHRSRcSUQ4JX-54XGclLrqcw7hOmvbqC74qkBfoMYWUOxasFVklMYCfy8"/>
+<span class="font-body-sm text-body-sm text-on-surface">Admin User</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface font-body-md docked full-width top-0 sticky z-40 border-b border-outline-variant flex justify-between items-center w-full px-container-padding h-14">
+<div class="flex items-center gap-container-padding">
+<span class="font-headline-md text-headline-md font-black text-primary">SignalDesk Mini</span>
+<!-- Search Bar (on_left) -->
+<div class="relative hidden lg:flex items-center w-64">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-DEFAULT py-1.5 pl-9 pr-3 text-body-sm focus:border-primary-container focus:ring-2 focus:ring-surface-container-low outline-none transition-all" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-element-gap-md">
+<!-- Trailing Icon Actions -->
+<button class="text-secondary hover:text-primary transition-colors p-1.5 rounded-DEFAULT hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors p-1.5 rounded-DEFAULT hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<!-- Trailing Primary Action -->
+<button class="ml-2 bg-primary-container text-on-primary font-data-tabular text-data-tabular px-4 py-1.5 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Create Record
+                </button>
+<img alt="Operator Avatar" class="w-8 h-8 rounded-full border border-outline-variant ml-2" data-alt="A small, circular avatar portrait of a professional operator in a well-lit studio. The lighting is bright and clean, fitting a modern light-mode interface. The color palette is neutral with soft tones. The image conveys reliability and focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSw4vM7-axxzJ906WTptaAskx9GZ2D5oBDqal9fy5es-rNTEapmBRxvmjYCMg3dl4yxpEhIOe4I-iBXaJPuVziToPxtpnMyXmL83l0gjsOLl0-ofv0uqTc_VM_n27b2i5HgRoiJYp_pY3uULKWcbOx_QS2DJdMEf3lFVvCKn6-lyIS-DUzko3ueDwVSKeXv_CX3C7h3XpmwyrdO1MEmU_zpnpPsWegxBJBmf3FcIgRDgpppaRCReuHtnhZwpeiUDOHQrOsD7dSr6M"/>
+</div>
+</header>
+<!-- Canvas Content -->
+<main class="flex-1 p-container-padding flex flex-col gap-container-padding max-w-[1440px] mx-auto w-full">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Insights Overview</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Real-time system telemetry and operational metrics.</p>
+</div>
+<div class="flex gap-element-gap-md">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface font-data-tabular text-data-tabular px-4 py-2 rounded-DEFAULT hover:border-outline transition-colors flex items-center gap-2 shadow-[0_2px_4px_-2px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        Filter Insights
+                    </button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface font-data-tabular text-data-tabular px-4 py-2 rounded-DEFAULT hover:border-outline transition-colors flex items-center gap-2 shadow-[0_2px_4px_-2px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Export Summary
+                    </button>
+</div>
+</div>
+<!-- Alert Banner -->
+<div class="bg-error-container border border-error/20 rounded-DEFAULT p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-0.5" data-icon="error">error</span>
+<div class="flex-1">
+<h3 class="font-data-tabular text-data-tabular text-on-error-container font-semibold">Action Required</h3>
+<p class="font-body-sm text-body-sm text-on-error-container/80 mt-1">3 high-priority records are currently stalled in the processing queue. Immediate attention is recommended to maintain SLA compliance.</p>
+</div>
+<button class="text-error font-data-tabular text-data-tabular hover:underline">View Records</button>
+</div>
+<!-- Bento Grid Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Metric 1: System Uptime -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col gap-2 hover:border-outline-variant/80 hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">System Uptime</span>
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-lg text-headline-lg text-on-surface text-3xl font-bold">99.98%</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-green-600 text-xs" data-icon="trending_up">trending_up</span>
+<span class="font-body-sm text-body-sm text-green-600 font-medium">+0.02%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs ml-1">vs last 30d</span>
+</div>
+</div>
+<!-- Metric 2: MTTR -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col gap-2 hover:border-outline-variant/80 hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Mean Time to Resolve</span>
+<span class="material-symbols-outlined text-secondary" data-icon="timer">timer</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-lg text-headline-lg text-on-surface text-3xl font-bold">42m</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-green-600 text-xs" data-icon="trending_down">trending_down</span>
+<span class="font-body-sm text-body-sm text-green-600 font-medium">-12m</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs ml-1">vs last 30d</span>
+</div>
+</div>
+<!-- Metric 3: Record Growth -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col gap-2 hover:border-outline-variant/80 hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Record Growth</span>
+<span class="material-symbols-outlined text-secondary" data-icon="stacked_bar_chart">stacked_bar_chart</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-lg text-headline-lg text-on-surface text-3xl font-bold">+124</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-secondary text-xs" data-icon="horizontal_rule">horizontal_rule</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Stable</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs ml-1">rolling 24h</span>
+</div>
+</div>
+<!-- Metric 4: State Distribution -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col justify-between hover:border-outline-variant/80 hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] transition-all">
+<div class="flex justify-between items-center text-on-surface-variant mb-4">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">State Distribution</span>
+<span class="material-symbols-outlined text-secondary" data-icon="pie_chart">pie_chart</span>
+</div>
+<div class="flex flex-col gap-3">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="font-body-sm text-body-sm text-on-surface">Open</span>
+<span class="font-data-tabular text-data-tabular">28%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 28%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="font-body-sm text-body-sm text-on-surface">Closed</span>
+<span class="font-data-tabular text-data-tabular">72%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col overflow-hidden">
+<div class="p-5 border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Activity Events</h3>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 px-5 whitespace-nowrap">Event</th>
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 px-5 whitespace-nowrap">Entity</th>
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 px-5 whitespace-nowrap">Status</th>
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 px-5 whitespace-nowrap text-right">Time</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/50">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-5 font-body-sm text-body-sm text-on-surface font-medium flex items-center gap-2 min-h-[40px]">
+<span class="material-symbols-outlined text-secondary text-sm">sync</span>
+                                    Data Synchronization
+                                </td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant">Cluster-A9</td>
+<td class="py-3 px-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-green-100 text-green-800 font-label-caps text-[11px] font-semibold border border-green-200">Processed</span>
+</td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant text-right">10:42 AM</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group bg-error-container/10">
+<td class="py-3 px-5 font-body-sm text-body-sm text-on-surface font-medium flex items-center gap-2 min-h-[40px]">
+<span class="material-symbols-outlined text-error text-sm">warning</span>
+                                    Node Failure Detected
+                                </td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant">Worker-44</td>
+<td class="py-3 px-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-red-100 text-red-800 font-label-caps text-[11px] font-semibold border border-red-200">Failed</span>
+</td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant text-right">10:38 AM</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-5 font-body-sm text-body-sm text-on-surface font-medium flex items-center gap-2 min-h-[40px]">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                    Backup Completed
+                                </td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant">DB-Primary</td>
+<td class="py-3 px-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps text-[11px] font-semibold border border-emerald-200">Success</span>
+</td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant text-right">09:15 AM</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-5 font-body-sm text-body-sm text-on-surface font-medium flex items-center gap-2 min-h-[40px]">
+<span class="material-symbols-outlined text-secondary text-sm">cycle</span>
+                                    Routine Scan
+                                </td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant">Network-Sec</td>
+<td class="py-3 px-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-label-caps text-[11px] font-semibold border border-blue-200">Active</span>
+</td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant text-right">08:00 AM</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-5 font-body-sm text-body-sm text-on-surface font-medium flex items-center gap-2 min-h-[40px]">
+<span class="material-symbols-outlined text-yellow-600 text-sm">report_problem</span>
+                                    Latency Spike
+                                </td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant">API-Gateway</td>
+<td class="py-3 px-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-yellow-100 text-yellow-800 font-label-caps text-[11px] font-semibold border border-yellow-200">Warning</span>
+</td>
+<td class="py-3 px-5 font-data-tabular text-data-tabular text-on-surface-variant text-right">07:45 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,2590 @@
+{
+  "generatedAt": "2026-06-17T06:10:02.304Z",
+  "screenCount": 5,
+  "screens": {
+    "1de793822b0e4cc7a042ceb188c56f4b": {
+      "screenId": "1de793822b0e4cc7a042ceb188c56f4b",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "absolute",
+          "classes": [
+            "bg-surface",
+            "dark:bg-on-surface",
+            "h-screen",
+            "w-64",
+            "fixed",
+            "left-0",
+            "top-0",
+            "border-r",
+            "border-outline-variant",
+            "dark:border-outline"
+          ],
+          "childCount": 6
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "ml-64",
+            "flex-1",
+            "flex",
+            "flex-col",
+            "min-h-screen",
+            "relative"
+          ],
+          "childCount": 16
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-secondary",
+            "dark:text-secondary-fixed",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed",
+            "transition-colors"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "text-secondary",
+            "dark:text-secondary-fixed",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed",
+            "transition-colors"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "classes": [
+            "bg-primary-container",
+            "text-on-tertiary",
+            "font-body-sm",
+            "text-body-sm",
+            "font-medium",
+            "px-4",
+            "py-1.5",
+            "rounded",
+            "hover:bg-primary",
+            "transition-colors",
+            "ml-2"
+          ],
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel",
+          "classes": [
+            "bg-transparent",
+            "text-secondary",
+            "font-body-sm",
+            "text-body-sm",
+            "font-medium",
+            "px-4",
+            "py-2",
+            "rounded",
+            "hover:bg-surface-container-low",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Save Record",
+          "classes": [
+            "bg-primary-container",
+            "text-on-tertiary",
+            "font-body-sm",
+            "text-body-sm",
+            "font-medium",
+            "px-6",
+            "py-2",
+            "rounded",
+            "hover:bg-primary",
+            "transition-colors",
+            "shadow-sm"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Enter record title",
+          "placeholder": "Enter record title",
+          "name": "record-title",
+          "classes": [
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-2",
+            "py-1",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:outline-none",
+            "focus:border-primary-container",
+            "focus:ring-2",
+            "focus:ring-surface-container-high",
+            "transition-all"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "textarea",
+          "label": "Enter details...",
+          "placeholder": "Enter details...",
+          "name": "record-desc",
+          "classes": [
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-2",
+            "py-1",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:outline-none",
+            "focus:border-primary-container",
+            "focus:ring-2",
+            "focus:ring-surface-container-high",
+            "transition-all",
+            "resize-y"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "select",
+          "label": "record-status",
+          "placeholder": "",
+          "name": "record-status",
+          "classes": [
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-2",
+            "py-1.5",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:outline-none",
+            "focus:border-primary-container",
+            "focus:ring-2",
+            "focus:ring-surface-container-high",
+            "transition-all",
+            "appearance-none",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "radio",
+          "label": "priority",
+          "placeholder": "",
+          "name": "priority",
+          "classes": [
+            "text-primary-container",
+            "focus:ring-primary-container",
+            "border-outline-variant",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "e.g. urgent, frontend, Q3",
+          "placeholder": "e.g. urgent, frontend, Q3",
+          "name": "record-tags",
+          "classes": [
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-2",
+            "py-1",
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface",
+            "focus:outline-none",
+            "focus:border-primary-container",
+            "focus:ring-2",
+            "focus:ring-surface-container-high",
+            "transition-all"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Back to Operations",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined",
+            "text-[18px]"
+          ],
+          "icon": "arrow_back",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "analytics",
+        "monitoring",
+        "settings",
+        "notifications",
+        "help_outline",
+        "info",
+        "arrow_back"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBQRlaKFMTed31vVex4-7DEg6JZDbmjYdXRl4YG09_a7_xgMqr8clgbQmOekXMsgjxF9smhm4QEMr6p0cbWmk_Qj1dfiY2YiwzkH7-icRiEeKRDuvvREIsM_R9SYBzwG2_LfbxYtauS5ocNr4P_o7",
+          "alt": "User profile"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCXZPHtQIzN4a4EhRywUMN8gdo2Nn0Mx3fRLZeaZQUZXkO_cuSk6rft-6yzOsjHoQCvZuUbhGSG5es7QUiB-f_wG8E9439Jy3CI8X31sIzCyjTksb4NKCM2ggGsMV9HdJzznidDYfsRFL3Cthv9RJ",
+          "alt": "Operator Avatar"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "surface-variant": "#e4e2e3",
+        "on-error-container": "#93000a",
+        "error-container": "#ffdad6",
+        "secondary-fixed": "#d3e4fe",
+        "on-primary-fixed": "#111c2d",
+        "outline-variant": "#c5c6cd",
+        "surface-tint": "#545f73",
+        "primary-container": "#1e293b",
+        "on-tertiary": "#ffffff",
+        "surface": "#fbf8fa",
+        "on-surface": "#1b1b1d",
+        "inverse-on-surface": "#f3f0f2",
+        "surface-container-lowest": "#ffffff",
+        "on-surface-variant": "#45474c",
+        "secondary-fixed-dim": "#b7c8e1",
+        "inverse-surface": "#303032",
+        "on-secondary-fixed": "#0b1c30",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed-variant": "#3c475a",
+        "on-secondary-container": "#54647a",
+        "surface-dim": "#dcd9db",
+        "error": "#ba1a1a",
+        "background": "#fbf8fa",
+        "surface-container": "#f0edef",
+        "surface-bright": "#fbf8fa",
+        "primary": "#091426",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e4e2e3",
+        "primary-fixed": "#d8e3fb",
+        "on-tertiary-container": "#a38c6a",
+        "surface-container-high": "#eae7e9",
+        "outline": "#75777d",
+        "on-secondary-fixed-variant": "#38485d",
+        "on-primary-container": "#8590a6",
+        "tertiary-container": "#35260c",
+        "on-background": "#1b1b1d",
+        "tertiary": "#1e1200",
+        "inverse-primary": "#bcc7de",
+        "on-tertiary-fixed": "#271902",
+        "tertiary-fixed": "#fadfb8",
+        "surface-container-low": "#f5f3f4",
+        "secondary": "#505f76",
+        "primary-fixed-dim": "#bcc7de",
+        "secondary-container": "#d0e1fb",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed-variant": "#564427",
+        "tertiary-fixed-dim": "#ddc39d"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "2"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Back to Operations",
+          "icon": "arrow_back",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Cancel",
+          "icon": null,
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Save Record",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Enter record title",
+          "type": "text",
+          "placeholder": "Enter record title",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "Enter details...",
+          "type": "textarea",
+          "placeholder": "Enter details...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "record-status",
+          "type": "select",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "priority",
+          "type": "radio",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "e.g. urgent, frontend, Q3",
+          "type": "text",
+          "placeholder": "e.g. urgent, frontend, Q3",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Record Editor - SignalDesk Mini"
+    },
+    "51e2a834684b463e86b4662dfb4ca7ef": {
+      "screenId": "51e2a834684b463e86b4662dfb4ca7ef",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "absolute",
+          "classes": [
+            "bg-surface",
+            "text-primary",
+            "font-body-md",
+            "h-screen",
+            "w-64",
+            "fixed",
+            "left-0",
+            "top-0",
+            "border-r",
+            "border-outline-variant"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "font-body-md",
+            "docked",
+            "full-width",
+            "top-0",
+            "sticky",
+            "z-40",
+            "border-b",
+            "border-outline-variant",
+            "flex"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "p-container-padding",
+            "flex",
+            "flex-col",
+            "gap-container-padding",
+            "max-w-[1440px]",
+            "mx-auto",
+            "w-full"
+          ],
+          "childCount": 38
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-secondary",
+            "hover:text-primary",
+            "transition-colors",
+            "p-1.5",
+            "rounded-DEFAULT",
+            "hover:bg-surface-container"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "text-secondary",
+            "hover:text-primary",
+            "transition-colors",
+            "p-1.5",
+            "rounded-DEFAULT",
+            "hover:bg-surface-container"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "classes": [
+            "ml-2",
+            "bg-primary-container",
+            "text-on-primary",
+            "font-data-tabular",
+            "text-data-tabular",
+            "px-4",
+            "py-1.5",
+            "rounded-DEFAULT",
+            "hover:opacity-90",
+            "transition-opacity",
+            "flex",
+            "items-center",
+            "gap-1"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Filter Insights",
+          "classes": [
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "font-data-tabular",
+            "text-data-tabular",
+            "px-4",
+            "py-2",
+            "rounded-DEFAULT",
+            "hover:border-outline",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "gap-2",
+            "shadow-[0_2px_4px_-2px_rgba(0,0,0,0.05)]"
+          ],
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "Export Summary",
+          "classes": [
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "font-data-tabular",
+            "text-data-tabular",
+            "px-4",
+            "py-2",
+            "rounded-DEFAULT",
+            "hover:border-outline",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "gap-2",
+            "shadow-[0_2px_4px_-2px_rgba(0,0,0,0.05)]"
+          ],
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "View Records",
+          "classes": [
+            "text-error",
+            "font-data-tabular",
+            "text-data-tabular",
+            "hover:underline"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "more_horiz",
+          "classes": [
+            "text-secondary",
+            "hover:text-primary",
+            "transition-colors"
+          ],
+          "icon": "more_horiz",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Admin User",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search...",
+          "placeholder": "Search...",
+          "name": "",
+          "classes": [
+            "w-full",
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "rounded-DEFAULT",
+            "py-1.5",
+            "pl-9",
+            "pr-3",
+            "text-body-sm",
+            "focus:border-primary-container",
+            "focus:ring-2",
+            "focus:ring-surface-container-low",
+            "outline-none",
+            "transition-all"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "analytics",
+        "monitoring",
+        "settings",
+        "search",
+        "notifications",
+        "help_outline",
+        "add",
+        "filter_list",
+        "download",
+        "error",
+        "check_circle",
+        "trending_up",
+        "timer",
+        "trending_down",
+        "stacked_bar_chart",
+        "horizontal_rule",
+        "pie_chart",
+        "more_horiz",
+        "sync",
+        "warning",
+        "cycle",
+        "report_problem"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuA1s3UbTOKY4zoBCseGfG9BYfxD_HRz1wyeGUeb9MMFyB9oyM816oyDNShuq6a31xl6c_d2Cg_3txCTErqmdbtxej8Mr4VGL_chPYaXf7bi4KqozC50qX3ODVJWGFrebRIGgCKnsSauX7DhIZl8t6",
+          "alt": "User profile"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDSw4vM7-axxzJ906WTptaAskx9GZ2D5oBDqal9fy5es-rNTEapmBRxvmjYCMg3dl4yxpEhIOe4I-iBXaJPuVziToPxtpnMyXmL83l0gjsOLl0-ofv0uqTc_VM_n27b2i5HgRoiJYp_pY3uULKWcb",
+          "alt": "Operator Avatar"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "surface-variant": "#e4e2e3",
+        "on-error-container": "#93000a",
+        "error-container": "#ffdad6",
+        "secondary-fixed": "#d3e4fe",
+        "on-primary-fixed": "#111c2d",
+        "outline-variant": "#c5c6cd",
+        "surface-tint": "#545f73",
+        "primary-container": "#1e293b",
+        "on-tertiary": "#ffffff",
+        "surface": "#fbf8fa",
+        "on-surface": "#1b1b1d",
+        "inverse-on-surface": "#f3f0f2",
+        "surface-container-lowest": "#ffffff",
+        "on-surface-variant": "#45474c",
+        "secondary-fixed-dim": "#b7c8e1",
+        "inverse-surface": "#303032",
+        "on-secondary-fixed": "#0b1c30",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed-variant": "#3c475a",
+        "on-secondary-container": "#54647a",
+        "surface-dim": "#dcd9db",
+        "error": "#ba1a1a",
+        "background": "#fbf8fa",
+        "surface-container": "#f0edef",
+        "surface-bright": "#fbf8fa",
+        "primary": "#091426",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e4e2e3",
+        "primary-fixed": "#d8e3fb",
+        "on-tertiary-container": "#a38c6a",
+        "surface-container-high": "#eae7e9",
+        "outline": "#75777d",
+        "on-secondary-fixed-variant": "#38485d",
+        "on-primary-container": "#8590a6",
+        "tertiary-container": "#35260c",
+        "on-background": "#1b1b1d",
+        "tertiary": "#1e1200",
+        "inverse-primary": "#bcc7de",
+        "on-tertiary-fixed": "#271902",
+        "tertiary-fixed": "#fadfb8",
+        "surface-container-low": "#f5f3f4",
+        "secondary": "#505f76",
+        "primary-fixed-dim": "#bcc7de",
+        "secondary-container": "#d0e1fb",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed-variant": "#564427",
+        "tertiary-fixed-dim": "#ddc39d"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "1"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Filter Insights",
+          "icon": "filter_list",
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "Export Summary",
+          "icon": "download",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "View Records",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "more_horiz",
+          "icon": "more_horiz",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Admin User",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search...",
+          "type": "text",
+          "placeholder": "Search...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "Admin User",
+          "icon": null,
+          "active": false
+        }
+      ],
+      "title": "Insights - SignalDesk Mini"
+    },
+    "93e9d3999529407e9a124a91c6dfcbbb": {
+      "screenId": "93e9d3999529407e9a124a91c6dfcbbb",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "absolute",
+          "classes": [
+            "bg-surface",
+            "dark:bg-on-surface",
+            "h-screen",
+            "w-64",
+            "fixed",
+            "left-0",
+            "top-0",
+            "border-r",
+            "border-outline-variant",
+            "dark:border-outline"
+          ],
+          "childCount": 8
+        },
+        {
+          "tag": "header",
+          "layout": "block",
+          "classes": [
+            "bg-surface",
+            "dark:bg-on-surface",
+            "docked",
+            "full-width",
+            "top-0",
+            "sticky",
+            "z-40",
+            "border-b",
+            "border-outline-variant",
+            "dark:border-outline"
+          ],
+          "childCount": 5
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "flex",
+            "overflow-hidden"
+          ],
+          "childCount": 31
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "text-secondary",
+            "dark:text-secondary-fixed",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed",
+            "transition-colors"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-secondary",
+            "dark:text-secondary-fixed",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed",
+            "transition-colors"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "classes": [
+            "bg-primary-container",
+            "text-on-tertiary",
+            "font-body-sm",
+            "text-body-sm",
+            "font-semibold",
+            "px-4",
+            "py-1.5",
+            "rounded",
+            "hover:bg-primary",
+            "transition-colors",
+            "flex",
+            "items-center"
+          ],
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "All Status",
+          "classes": [
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "font-body-sm",
+            "text-body-sm",
+            "px-3",
+            "py-1.5",
+            "rounded",
+            "flex",
+            "items-center",
+            "hover:bg-surface-container",
+            "transition-colors"
+          ],
+          "icon": "expand_more",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Priority: High",
+          "classes": [
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "font-body-sm",
+            "text-body-sm",
+            "px-3",
+            "py-1.5",
+            "rounded",
+            "flex",
+            "items-center",
+            "hover:bg-surface-container",
+            "transition-colors"
+          ],
+          "icon": "expand_more",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "close",
+          "classes": [
+            "text-secondary",
+            "hover:text-on-surface",
+            "transition-colors"
+          ],
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Update Status",
+          "classes": [
+            "flex-1",
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "font-body-sm",
+            "text-body-sm",
+            "font-semibold",
+            "py-2",
+            "rounded",
+            "hover:bg-surface-container",
+            "transition-colors",
+            "shadow-sm"
+          ],
+          "icon": null,
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Acknowledge",
+          "classes": [
+            "flex-1",
+            "bg-primary-container",
+            "text-on-tertiary",
+            "font-body-sm",
+            "text-body-sm",
+            "font-semibold",
+            "py-2",
+            "rounded",
+            "hover:bg-primary",
+            "transition-colors",
+            "shadow-sm"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "JD",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "User profile Operator",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search records...",
+          "placeholder": "Search records...",
+          "name": "",
+          "classes": [
+            "w-full",
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "px-10",
+            "py-1.5",
+            "font-body-sm",
+            "text-body-sm",
+            "focus:outline-none",
+            "focus:border-primary",
+            "focus:ring-2",
+            "focus:ring-surface-container-high",
+            "transition-all"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "analytics",
+        "monitoring",
+        "settings",
+        "search",
+        "help_outline",
+        "notifications",
+        "expand_more",
+        "close",
+        "warning"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuClE4M7Kq3UFNt-mEMwhMnr7_xXbwJElpxAsuCq5PW-e25CL3pd-SIPDuCFXzHhu3rTimTgJLhgHOmM-XPEzEZvEUlMMWhdG3dWybiGg5xTMdFx33TBDBpPGt35Gn_HyN1yeOGFrUFiGTMfg011uG",
+          "alt": "Operator Avatar"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "surface-variant": "#e4e2e3",
+        "on-error-container": "#93000a",
+        "error-container": "#ffdad6",
+        "secondary-fixed": "#d3e4fe",
+        "on-primary-fixed": "#111c2d",
+        "outline-variant": "#c5c6cd",
+        "surface-tint": "#545f73",
+        "primary-container": "#1e293b",
+        "on-tertiary": "#ffffff",
+        "surface": "#fbf8fa",
+        "on-surface": "#1b1b1d",
+        "inverse-on-surface": "#f3f0f2",
+        "surface-container-lowest": "#ffffff",
+        "on-surface-variant": "#45474c",
+        "secondary-fixed-dim": "#b7c8e1",
+        "inverse-surface": "#303032",
+        "on-secondary-fixed": "#0b1c30",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed-variant": "#3c475a",
+        "on-secondary-container": "#54647a",
+        "surface-dim": "#dcd9db",
+        "error": "#ba1a1a",
+        "background": "#fbf8fa",
+        "surface-container": "#f0edef",
+        "surface-bright": "#fbf8fa",
+        "primary": "#091426",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e4e2e3",
+        "primary-fixed": "#d8e3fb",
+        "on-tertiary-container": "#a38c6a",
+        "surface-container-high": "#eae7e9",
+        "outline": "#75777d",
+        "on-secondary-fixed-variant": "#38485d",
+        "on-primary-container": "#8590a6",
+        "tertiary-container": "#35260c",
+        "on-background": "#1b1b1d",
+        "tertiary": "#1e1200",
+        "inverse-primary": "#bcc7de",
+        "on-tertiary-fixed": "#271902",
+        "tertiary-fixed": "#fadfb8",
+        "surface-container-low": "#f5f3f4",
+        "secondary": "#505f76",
+        "primary-fixed-dim": "#bcc7de",
+        "secondary-container": "#d0e1fb",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed-variant": "#564427",
+        "tertiary-fixed-dim": "#ddc39d"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 3,
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "All Status",
+          "icon": "expand_more",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Priority: High",
+          "icon": "expand_more",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "close",
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Update Status",
+          "icon": null,
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Acknowledge",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "JD",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "User profile Operator",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search records...",
+          "type": "text",
+          "placeholder": "Search records...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "JD",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "User profile Operator",
+          "icon": null,
+          "active": false
+        }
+      ],
+      "title": "Record Operations - SignalDesk Mini"
+    },
+    "cc6b5637380b47af89dac895a0f67598": {
+      "screenId": "cc6b5637380b47af89dac895a0f67598",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "absolute",
+          "classes": [
+            "bg-surface",
+            "dark:bg-on-surface",
+            "h-screen",
+            "w-64",
+            "fixed",
+            "left-0",
+            "top-0",
+            "border-r",
+            "border-outline-variant",
+            "dark:border-outline"
+          ],
+          "childCount": 8
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "flex",
+            "flex-col",
+            "md:ml-64",
+            "min-h-screen"
+          ],
+          "childCount": 61
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "menu",
+          "classes": [
+            "md:hidden",
+            "text-secondary",
+            "hover:text-primary",
+            "transition-colors"
+          ],
+          "icon": "menu",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "text-secondary",
+            "dark:text-secondary-fixed",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "justify-center",
+            "w-8",
+            "h-8",
+            "rounded",
+            "hover:bg-surface-container"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "text-secondary",
+            "dark:text-secondary-fixed",
+            "hover:text-primary",
+            "dark:hover:text-primary-fixed",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "justify-center",
+            "w-8",
+            "h-8",
+            "rounded",
+            "hover:bg-surface-container"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "classes": [
+            "bg-primary-container",
+            "text-on-tertiary",
+            "font-body-md",
+            "text-body-md",
+            "font-medium",
+            "px-4",
+            "py-1.5",
+            "rounded",
+            "hover:bg-on-surface",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "gap-2",
+            "h-8"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Reset to Defaults",
+          "classes": [
+            "px-4",
+            "py-2",
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "text-on-surface-variant",
+            "font-body-md",
+            "text-body-md",
+            "rounded",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "hover:border-outline"
+          ],
+          "icon": null,
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "Changes",
+          "classes": [
+            "px-4",
+            "py-2",
+            "bg-primary-container",
+            "text-on-tertiary",
+            "font-body-md",
+            "text-body-md",
+            "rounded",
+            "hover:bg-on-surface",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "gap-2"
+          ],
+          "icon": "save",
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "New",
+          "classes": [
+            "px-3",
+            "py-1.5",
+            "bg-surface-container",
+            "text-on-surface",
+            "font-body-sm",
+            "text-body-sm",
+            "font-medium",
+            "rounded",
+            "border",
+            "border-outline-variant",
+            "hover:bg-surface-container-high",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "gap-1"
+          ],
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Edit",
+          "classes": [
+            "text-secondary",
+            "hover:text-primary-container",
+            "p-1",
+            "rounded",
+            "hover:bg-surface-container",
+            "transition-colors"
+          ],
+          "icon": "edit",
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Delete",
+          "classes": [
+            "text-secondary",
+            "hover:text-error",
+            "p-1",
+            "rounded",
+            "hover:bg-error-container",
+            "transition-colors"
+          ],
+          "icon": "delete",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        },
+        {
+          "kind": "button",
+          "label": "View Changelog",
+          "classes": [
+            "text-secondary",
+            "hover:text-primary",
+            "font-body-sm",
+            "text-body-sm",
+            "underline",
+            "underline-offset-2"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "S",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Alex Carter System Admin",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "text",
+          "label": "Search settings...",
+          "placeholder": "Search settings...",
+          "name": "",
+          "classes": [
+            "w-full",
+            "h-8",
+            "pl-9",
+            "pr-3",
+            "rounded",
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "focus:border-primary-container",
+            "focus:ring-2",
+            "focus:ring-surface-container-highest",
+            "focus:outline-none",
+            "font-body-sm",
+            "text-body-sm",
+            "text-on-surface",
+            "placeholder-secondary",
+            "transition-all"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "radio",
+          "label": "default_view",
+          "placeholder": "",
+          "name": "default_view",
+          "classes": [
+            "custom-radio"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "radio",
+          "label": "density",
+          "placeholder": "",
+          "name": "density",
+          "classes": [
+            "custom-radio"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "toggle_record",
+          "placeholder": "",
+          "name": "toggle_record",
+          "classes": [
+            "toggle-checkbox",
+            "absolute",
+            "block",
+            "w-4",
+            "h-4",
+            "rounded-full",
+            "bg-white",
+            "border-4",
+            "appearance-none",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "toggle_system",
+          "placeholder": "",
+          "name": "toggle_system",
+          "classes": [
+            "toggle-checkbox",
+            "absolute",
+            "block",
+            "w-4",
+            "h-4",
+            "rounded-full",
+            "bg-white",
+            "border-4",
+            "appearance-none",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "toggle_digest",
+          "placeholder": "",
+          "name": "toggle_digest",
+          "classes": [
+            "toggle-checkbox",
+            "absolute",
+            "block",
+            "w-4",
+            "h-4",
+            "rounded-full",
+            "bg-white",
+            "border-4",
+            "appearance-none",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "font-body-md",
+            "text-body-md"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "analytics",
+        "monitoring",
+        "settings",
+        "menu",
+        "search",
+        "notifications",
+        "help_outline",
+        "add",
+        "save",
+        "dashboard_customize",
+        "view_list",
+        "view_kanban",
+        "density_medium",
+        "notifications_active",
+        "filter_list",
+        "edit",
+        "delete",
+        "terminal"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuC_YycKr6Bvb8cCkLHlnjTOkv3pDYRY3g5Ip5li26PMmQmlx8KwgefV2tK5t4BB70XFcOuUf8mWHzHgrINCyumbe8diEAGffGczWfHTuLVU50TUSrb3BDgmUHZk2-taLSyb05yO_honOAoFvaiJyi",
+          "alt": "User profile"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "surface-variant": "#e4e2e3",
+        "on-error-container": "#93000a",
+        "error-container": "#ffdad6",
+        "secondary-fixed": "#d3e4fe",
+        "on-primary-fixed": "#111c2d",
+        "outline-variant": "#c5c6cd",
+        "surface-tint": "#545f73",
+        "primary-container": "#1e293b",
+        "on-tertiary": "#ffffff",
+        "surface": "#fbf8fa",
+        "on-surface": "#1b1b1d",
+        "inverse-on-surface": "#f3f0f2",
+        "surface-container-lowest": "#ffffff",
+        "on-surface-variant": "#45474c",
+        "secondary-fixed-dim": "#b7c8e1",
+        "inverse-surface": "#303032",
+        "on-secondary-fixed": "#0b1c30",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed-variant": "#3c475a",
+        "on-secondary-container": "#54647a",
+        "surface-dim": "#dcd9db",
+        "error": "#ba1a1a",
+        "background": "#fbf8fa",
+        "surface-container": "#f0edef",
+        "surface-bright": "#fbf8fa",
+        "primary": "#091426",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e4e2e3",
+        "primary-fixed": "#d8e3fb",
+        "on-tertiary-container": "#a38c6a",
+        "surface-container-high": "#eae7e9",
+        "outline": "#75777d",
+        "on-secondary-fixed-variant": "#38485d",
+        "on-primary-container": "#8590a6",
+        "tertiary-container": "#35260c",
+        "on-background": "#1b1b1d",
+        "tertiary": "#1e1200",
+        "inverse-primary": "#bcc7de",
+        "on-tertiary-fixed": "#271902",
+        "tertiary-fixed": "#fadfb8",
+        "surface-container-low": "#f5f3f4",
+        "secondary": "#505f76",
+        "primary-fixed-dim": "#bcc7de",
+        "secondary-container": "#d0e1fb",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed-variant": "#564427",
+        "tertiary-fixed-dim": "#ddc39d"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "menu",
+          "icon": "menu",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Reset to Defaults",
+          "icon": null,
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "Changes",
+          "icon": "save",
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "New",
+          "icon": "add",
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Edit",
+          "icon": "edit",
+          "action": "edit",
+          "expectedBehavior": "open edit flow or update selected item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Delete",
+          "icon": "delete",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        },
+        {
+          "kind": "button",
+          "label": "View Changelog",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "S",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Alex Carter System Admin",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "Search settings...",
+          "type": "text",
+          "placeholder": "Search settings...",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "default_view",
+          "type": "radio",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "density",
+          "type": "radio",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "toggle_record",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "toggle_system",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "toggle_digest",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "S",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Alex Carter System Admin",
+          "icon": null,
+          "active": false
+        }
+      ],
+      "title": "Settings and Preferences - SignalDesk Mini"
+    },
+    "dd556658f6df4c269d20cf9e2b5990e9": {
+      "screenId": "dd556658f6df4c269d20cf9e2b5990e9",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "h-screen",
+            "w-64",
+            "fixed",
+            "left-0",
+            "top-0",
+            "border-r",
+            "border-outline-variant",
+            "bg-surface",
+            "flex",
+            "flex-col"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "flex",
+            "justify-between",
+            "items-center",
+            "w-full",
+            "px-container-padding",
+            "h-14",
+            "max-w-[calc(100%-16rem)]",
+            "bg-surface",
+            "border-b",
+            "border-outline-variant"
+          ],
+          "childCount": 5
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "p-container-padding",
+            "flex",
+            "items-center",
+            "justify-center",
+            "bg-background"
+          ],
+          "childCount": 4
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "notifications",
+          "classes": [
+            "p-2",
+            "text-secondary",
+            "hover:text-primary",
+            "transition-colors",
+            "hover:bg-surface-container",
+            "rounded-full"
+          ],
+          "icon": "notifications",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/notifications",
+          "expectedRoute": "/notifications",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "classes": [
+            "p-2",
+            "text-secondary",
+            "hover:text-primary",
+            "transition-colors",
+            "hover:bg-surface-container",
+            "rounded-full"
+          ],
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "classes": [
+            "bg-primary-container",
+            "text-on-tertiary",
+            "px-4",
+            "py-1.5",
+            "rounded",
+            "font-data-tabular",
+            "text-data-tabular",
+            "hover:opacity-90",
+            "transition-opacity"
+          ],
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Retry Load",
+          "classes": [
+            "px-6",
+            "py-2",
+            "bg-primary-container",
+            "text-on-tertiary",
+            "rounded",
+            "font-data-tabular",
+            "text-data-tabular",
+            "font-bold",
+            "hover:opacity-90",
+            "transition-opacity"
+          ],
+          "icon": null,
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "button",
+          "label": "Clear Filters",
+          "classes": [
+            "px-6",
+            "py-2",
+            "bg-surface-container-lowest",
+            "text-on-surface",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "font-data-tabular",
+            "text-data-tabular",
+            "hover:bg-surface-container-low",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "analytics",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "monitoring",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Create New Record",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined",
+            "text-sm"
+          ],
+          "icon": "add",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "analytics",
+        "monitoring",
+        "settings",
+        "notifications",
+        "help_outline",
+        "wifi_off",
+        "add"
+      ],
+      "images": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAuFV0k6rn10ltKJh-isPpMGwBNgHD9EQRIG32lk5desTR2Ngs-X0HvO0Bqd6hfOwTl3mfzEW-uGR5KBXdnqREL4hBsVM1Zk7qmINaZqH-XxJ4mZIL7FfMbiLDmMnOn2t69lwJYLqR2A24cFn236Q",
+          "alt": "Operator Avatar"
+        }
+      ],
+      "cssVars": {},
+      "colorPalette": {
+        "surface-variant": "#e4e2e3",
+        "on-error-container": "#93000a",
+        "error-container": "#ffdad6",
+        "secondary-fixed": "#d3e4fe",
+        "on-primary-fixed": "#111c2d",
+        "outline-variant": "#c5c6cd",
+        "surface-tint": "#545f73",
+        "primary-container": "#1e293b",
+        "on-tertiary": "#ffffff",
+        "surface": "#fbf8fa",
+        "on-surface": "#1b1b1d",
+        "inverse-on-surface": "#f3f0f2",
+        "surface-container-lowest": "#ffffff",
+        "on-surface-variant": "#45474c",
+        "secondary-fixed-dim": "#b7c8e1",
+        "inverse-surface": "#303032",
+        "on-secondary-fixed": "#0b1c30",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed-variant": "#3c475a",
+        "on-secondary-container": "#54647a",
+        "surface-dim": "#dcd9db",
+        "error": "#ba1a1a",
+        "background": "#fbf8fa",
+        "surface-container": "#f0edef",
+        "surface-bright": "#fbf8fa",
+        "primary": "#091426",
+        "on-error": "#ffffff",
+        "surface-container-highest": "#e4e2e3",
+        "primary-fixed": "#d8e3fb",
+        "on-tertiary-container": "#a38c6a",
+        "surface-container-high": "#eae7e9",
+        "outline": "#75777d",
+        "on-secondary-fixed-variant": "#38485d",
+        "on-primary-container": "#8590a6",
+        "tertiary-container": "#35260c",
+        "on-background": "#1b1b1d",
+        "tertiary": "#1e1200",
+        "inverse-primary": "#bcc7de",
+        "on-tertiary-fixed": "#271902",
+        "tertiary-fixed": "#fadfb8",
+        "surface-container-low": "#f5f3f4",
+        "secondary": "#505f76",
+        "primary-fixed-dim": "#bcc7de",
+        "secondary-container": "#d0e1fb",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed-variant": "#564427",
+        "tertiary-fixed-dim": "#ddc39d"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Create New Record",
+          "icon": "add",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "notifications",
+          "icon": "notifications",
+          "action": "navigate",
+          "route": "/notifications",
+          "expectedBehavior": "navigate:/notifications"
+        },
+        {
+          "kind": "button",
+          "label": "help_outline",
+          "icon": "help_outline",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Create Record",
+          "icon": null,
+          "action": "create",
+          "expectedBehavior": "open create flow or add a new item/state"
+        },
+        {
+          "kind": "button",
+          "label": "Retry Load",
+          "icon": null,
+          "action": "retry",
+          "expectedBehavior": "retry the failed action and show loading/error feedback"
+        },
+        {
+          "kind": "button",
+          "label": "Clear Filters",
+          "icon": null,
+          "action": "search",
+          "expectedBehavior": "filter/search visible results from input/query"
+        },
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "SignalDesk Mini Admin",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Operations",
+          "icon": "analytics",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Insights",
+          "icon": "monitoring",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": false
+        }
+      ],
+      "title": "Empty and Error Recovery - SignalDesk Mini"
+    }
+  }
+}

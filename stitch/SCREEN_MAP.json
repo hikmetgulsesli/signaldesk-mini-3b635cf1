@@ -1,0 +1,47 @@
+[
+  {
+    "screenId": "dd556658f6df4c269d20cf9e2b5990e9",
+    "name": "Empty and Error Recovery - SignalDesk Mini",
+    "type": "error",
+    "description": "Empty and Error Recovery - SignalDesk Mini screen",
+    "surfaceIds": [
+      "SURF_EMPTY_AND_ERROR_RECOVERY"
+    ]
+  },
+  {
+    "screenId": "1de793822b0e4cc7a042ceb188c56f4b",
+    "name": "Record Editor - SignalDesk Mini",
+    "type": "form",
+    "description": "Record Editor - SignalDesk Mini screen",
+    "surfaceIds": [
+      "SURF_RECORD_EDITOR"
+    ]
+  },
+  {
+    "screenId": "cc6b5637380b47af89dac895a0f67598",
+    "name": "Settings and Preferences - SignalDesk Mini",
+    "type": "settings",
+    "description": "Settings and Preferences - SignalDesk Mini screen",
+    "surfaceIds": [
+      "SURF_SETTINGS_AND_PREFERENCES"
+    ]
+  },
+  {
+    "screenId": "51e2a834684b463e86b4662dfb4ca7ef",
+    "name": "Insights - SignalDesk Mini",
+    "type": "app-screen",
+    "description": "Insights - SignalDesk Mini screen",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "93e9d3999529407e9a124a91c6dfcbbb",
+    "name": "Record Operations - SignalDesk Mini",
+    "type": "app-screen",
+    "description": "Record Operations - SignalDesk Mini screen",
+    "surfaceIds": [
+      "SURF_RECORD_OPERATIONS"
+    ]
+  }
+]

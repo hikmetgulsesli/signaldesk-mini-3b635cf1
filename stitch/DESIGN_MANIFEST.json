@@ -1,0 +1,57 @@
+[
+  {
+    "screenId": "dd556658f6df4c269d20cf9e2b5990e9",
+    "title": "Empty and Error Recovery - SignalDesk Mini",
+    "htmlFile": "dd556658f6df4c269d20cf9e2b5990e9.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzM1M2VhMDY0NWM0NTQ0MGQ5NmM5ZDAyOTc2ZDFlOTFhEgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM3Mzg5NjEyNjcyMTQ2MTg0NDk5&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/signaldesk-mini-3b635cf1/stitch/dd556658f6df4c269d20cf9e2b5990e9.html",
+    "surfaceIds": [
+      "SURF_EMPTY_AND_ERROR_RECOVERY"
+    ]
+  },
+  {
+    "screenId": "1de793822b0e4cc7a042ceb188c56f4b",
+    "title": "Record Editor - SignalDesk Mini",
+    "htmlFile": "1de793822b0e4cc7a042ceb188c56f4b.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2VmMTk3Y2MzOWFiNTRiZTI4MmRjMTg1Njc5ZjE2YzkzEgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM3Mzg5NjEyNjcyMTQ2MTg0NDk5&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/signaldesk-mini-3b635cf1/stitch/1de793822b0e4cc7a042ceb188c56f4b.html",
+    "surfaceIds": [
+      "SURF_RECORD_EDITOR"
+    ]
+  },
+  {
+    "screenId": "cc6b5637380b47af89dac895a0f67598",
+    "title": "Settings and Preferences - SignalDesk Mini",
+    "htmlFile": "cc6b5637380b47af89dac895a0f67598.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzMzMjZlZDEzYWM4NDRhMDhiNzJkYmVjZWJiYTQxZjdlEgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM3Mzg5NjEyNjcyMTQ2MTg0NDk5&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/signaldesk-mini-3b635cf1/stitch/cc6b5637380b47af89dac895a0f67598.html",
+    "surfaceIds": [
+      "SURF_SETTINGS_AND_PREFERENCES"
+    ]
+  },
+  {
+    "screenId": "51e2a834684b463e86b4662dfb4ca7ef",
+    "title": "Insights - SignalDesk Mini",
+    "htmlFile": "51e2a834684b463e86b4662dfb4ca7ef.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzRiYjIzZGJmMjI2OTQzNzdiNDM0MzYyZjA2N2QzNWU2EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM3Mzg5NjEyNjcyMTQ2MTg0NDk5&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/signaldesk-mini-3b635cf1/stitch/51e2a834684b463e86b4662dfb4ca7ef.html",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "93e9d3999529407e9a124a91c6dfcbbb",
+    "title": "Record Operations - SignalDesk Mini",
+    "htmlFile": "93e9d3999529407e9a124a91c6dfcbbb.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2NlODZjNTNjYWE1NTQwYWU5YWY2NGQ2ZTViYzIwMjdkEgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM3Mzg5NjEyNjcyMTQ2MTg0NDk5&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/signaldesk-mini-3b635cf1/stitch/93e9d3999529407e9a124a91c6dfcbbb.html",
+    "surfaceIds": [
+      "SURF_RECORD_OPERATIONS"
+    ]
+  }
+]

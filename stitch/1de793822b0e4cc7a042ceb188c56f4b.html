@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SignalDesk Mini - Record Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e4e2e3",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#d3e4fe",
+                      "on-primary-fixed": "#111c2d",
+                      "outline-variant": "#c5c6cd",
+                      "surface-tint": "#545f73",
+                      "primary-container": "#1e293b",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#fbf8fa",
+                      "on-surface": "#1b1b1d",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#45474c",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "inverse-surface": "#303032",
+                      "on-secondary-fixed": "#0b1c30",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "on-secondary-container": "#54647a",
+                      "surface-dim": "#dcd9db",
+                      "error": "#ba1a1a",
+                      "background": "#fbf8fa",
+                      "surface-container": "#f0edef",
+                      "surface-bright": "#fbf8fa",
+                      "primary": "#091426",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e4e2e3",
+                      "primary-fixed": "#d8e3fb",
+                      "on-tertiary-container": "#a38c6a",
+                      "surface-container-high": "#eae7e9",
+                      "outline": "#75777d",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "on-primary-container": "#8590a6",
+                      "tertiary-container": "#35260c",
+                      "on-background": "#1b1b1d",
+                      "tertiary": "#1e1200",
+                      "inverse-primary": "#bcc7de",
+                      "on-tertiary-fixed": "#271902",
+                      "tertiary-fixed": "#fadfb8",
+                      "surface-container-low": "#f5f3f4",
+                      "secondary": "#505f76",
+                      "primary-fixed-dim": "#bcc7de",
+                      "secondary-container": "#d0e1fb",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#564427",
+                      "tertiary-fixed-dim": "#ddc39d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "element-gap-sm": "8px",
+                      "container-padding": "24px",
+                      "element-gap-md": "12px",
+                      "unit": "4px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "data-tabular": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "data-tabular": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-md": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background m-0 p-0 flex min-h-screen">
+<!-- Active Navigation Logic: "Operations" (Create Record intent) -->
+<!-- SideNavBar -->
+<nav class="bg-surface dark:bg-on-surface h-screen w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline flex flex-col h-full py-container-padding z-50">
+<div class="px-container-padding mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-surface">SignalDesk</h1>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Mini Admin</p>
+</div>
+<ul class="flex-1 flex flex-col gap-2">
+<!-- Active Tab: Operations -->
+<li>
+<a class="flex items-center gap-3 px-container-padding py-3 text-primary dark:text-primary-fixed font-bold border-r-2 border-primary dark:border-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors opacity-90 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-body-md text-body-md">Operations</span>
+</a>
+</li>
+<!-- Inactive Tab: Insights -->
+<li>
+<a class="flex items-center gap-3 px-container-padding py-3 text-secondary dark:text-secondary-fixed opacity-70 hover:opacity-100 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-body-md text-body-md">Insights</span>
+</a>
+</li>
+<!-- Inactive Tab: Settings -->
+<li>
+<a class="flex items-center gap-3 px-container-padding py-3 text-secondary dark:text-secondary-fixed opacity-70 hover:opacity-100 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</li>
+</ul>
+<div class="px-container-padding mt-auto flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional headshot of a person looking directly at the camera. The lighting is clean and even, set against a neutral light background. The subject is wearing modern corporate attire suitable for a tech environment. The overall mood is confident and approachable, fitting for a minimalist enterprise software dashboard avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQRlaKFMTed31vVex4-7DEg6JZDbmjYdXRl4YG09_a7_xgMqr8clgbQmOekXMsgjxF9smhm4QEMr6p0cbWmk_Qj1dfiY2YiwzkH7-icRiEeKRDuvvREIsM_R9SYBzwG2_LfbxYtauS5ocNr4P_o7JXQdbzr52EdWoXBQNAaPGu4Y7w-yoMGESeblQ9aqdh5fVDRkYlAf_JdMThm9Q7nQu8So4zWmssia9PmfJk7hjtr11TJZCfDTbHuYMxrSGcJDNMD4NFKXlcq9Q"/>
+</div>
+<span class="font-body-md text-body-md font-medium text-on-surface">Operator</span>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col min-h-screen relative">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-40 flex justify-between items-center w-full px-container-padding h-14 max-w-[calc(100%)]">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-black text-primary dark:text-primary-fixed">SignalDesk Mini</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="bg-primary-container text-on-tertiary font-body-sm text-body-sm font-medium px-4 py-1.5 rounded hover:bg-primary transition-colors ml-2">
+                    Create Record
+                </button>
+<div class="w-8 h-8 rounded-full ml-2 overflow-hidden border border-outline-variant">
+<img alt="Operator Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a person looking directly at the camera. The lighting is clean and even, set against a neutral light background. The subject is wearing modern corporate attire suitable for a tech environment. The overall mood is confident and approachable, fitting for a minimalist enterprise software dashboard avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXZPHtQIzN4a4EhRywUMN8gdo2Nn0Mx3fRLZeaZQUZXkO_cuSk6rft-6yzOsjHoQCvZuUbhGSG5es7QUiB-f_wG8E9439Jy3CI8X31sIzCyjTksb4NKCM2ggGsMV9HdJzznidDYfsRFL3Cthv9RJKqtNKcWwEwRJAkWYLo_NWKN227tx5EcvgPNgK9U03WIiMXQzCEWjwJybDdgXRnB4-9xsKd5o6k21A-IqMBmC06H9WcZVnnmbQ619aR1h0maaB4PaMW7kgLtII"/>
+</div>
+</div>
+</header>
+<!-- Unsaved Changes Banner -->
+<div class="bg-surface-container-highest border-b border-outline-variant py-2 px-container-padding flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">info</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Unsaved changes in this record.</span>
+</div>
+<!-- Canvas -->
+<div class="p-container-padding flex-1 bg-background flex flex-col items-center">
+<div class="w-full max-w-3xl">
+<!-- Back Navigation -->
+<div class="mb-6">
+<a class="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Back to Operations
+                    </a>
+</div>
+<!-- Editor Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-8 shadow-[0_4px_6px_-1px_rgb(0_0_0_/_0.1),_0_2px_4px_-2px_rgb(0_0_0_/_0.1)] transition-colors hover:border-outline">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Record Editor</h2>
+<form class="flex flex-col gap-6">
+<!-- Title Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant flex gap-1" for="record-title">
+                                Title <span class="text-error">*</span>
+</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded px-2 py-1 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-surface-container-high transition-all" id="record-title" name="record-title" placeholder="Enter record title" required="" type="text"/>
+</div>
+<!-- Description Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="record-desc">
+                                Description
+                            </label>
+<textarea class="bg-surface-container-lowest border border-outline-variant rounded px-2 py-1 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-surface-container-high transition-all resize-y" id="record-desc" name="record-desc" placeholder="Enter details..." rows="4"></textarea>
+</div>
+<!-- Row: Status & Priority -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Status Dropdown -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="record-status">
+                                    Status
+                                </label>
+<select class="bg-surface-container-lowest border border-outline-variant rounded px-2 py-1.5 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-surface-container-high transition-all appearance-none cursor-pointer" id="record-status" name="record-status">
+<option value="draft">Draft</option>
+<option value="active">Active</option>
+<option value="archived">Archived</option>
+</select>
+</div>
+<!-- Priority Radio Group -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">
+                                    Priority
+                                </label>
+<div class="flex gap-4 items-center">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="text-primary-container focus:ring-primary-container border-outline-variant cursor-pointer" name="priority" type="radio" value="low"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Low</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="text-primary-container focus:ring-primary-container border-outline-variant cursor-pointer" name="priority" type="radio" value="medium"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Medium</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="text-primary-container focus:ring-primary-container border-outline-variant cursor-pointer" name="priority" type="radio" value="high"/>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">High</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Tags Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="record-tags">
+                                Tags
+                            </label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded px-2 py-1 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-surface-container-high transition-all" id="record-tags" name="record-tags" placeholder="e.g. urgent, frontend, Q3" type="text"/>
+</div>
+<!-- Actions Divider -->
+<hr class="border-outline-variant my-2"/>
+<!-- Form Actions -->
+<div class="flex justify-end gap-3 pt-2">
+<button class="bg-transparent text-secondary font-body-sm text-body-sm font-medium px-4 py-2 rounded hover:bg-surface-container-low transition-colors" type="button">
+                                Cancel
+                            </button>
+<button class="bg-primary-container text-on-tertiary font-body-sm text-body-sm font-medium px-6 py-2 rounded hover:bg-primary transition-colors shadow-sm" type="submit">
+                                Save Record
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+</body></html>
