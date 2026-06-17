@@ -162,6 +162,15 @@
         s.preferences = { ...defaultPreferences };
         s.filter = { ...initialState.filter };
         return s;
+      case 'CLEAR_DATA':
+        s.records = [];
+        s.nextId = 1;
+        s.filter = { ...initialState.filter };
+        s.preferences = { ...defaultPreferences };
+        s.editor = { id: null, draft: {}, errors: {} };
+        s.lastError = null;
+        s.view = 'operations';
+        return s;
       case 'EXPORT_SUMMARY':
         try {
           const blob = new Blob([JSON.stringify({ records: s.records, exportedAt: new Date().toISOString() }, null, 2)], { type: 'application/json' });
@@ -211,6 +220,7 @@
     setError: error => store.dispatch({ type: 'SET_ERROR', error }),
     savePreferences: preferences => store.dispatch({ type: 'SAVE_PREFERENCES', preferences, applyView: false }),
     resetPreferences: () => store.dispatch({ type: 'RESET_PREFERENCES' }),
+    clearData: () => store.dispatch({ type: 'CLEAR_DATA' }),
     exportSummary: () => store.dispatch({ type: 'EXPORT_SUMMARY' })
   };
 
@@ -424,6 +434,9 @@
           break;
         case 'ACT_RESET_PREFERENCES':
           actions.resetPreferences();
+          break;
+        case 'ACT_CLEAR_DATA':
+          actions.clearData();
           break;
         case 'ACT_FILTER_INSIGHTS':
           // handled by select change

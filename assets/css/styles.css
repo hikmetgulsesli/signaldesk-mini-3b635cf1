@@ -69,6 +69,18 @@ button.primary {
   border-color: var(--color-primary);
 }
 
+button.action.danger {
+  background: var(--color-error-container);
+  color: var(--color-on-error-container);
+  border-color: var(--color-error);
+}
+
+button:disabled,
+button.disabled-action {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .app-actions {
   margin-left: auto;
   display: flex;

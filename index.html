@@ -18,8 +18,8 @@
         <div class="app-actions">
           <input type="search" data-action-id="ACT_SEARCH_RECORDS" placeholder="Search records..." aria-label="Search records" />
           <button data-action-id="ACT_CREATE_RECORD" class="primary">Create Record</button>
-          <button data-action-id="ACT_NOTIFICATIONS" aria-label="Notifications">notifications</button>
-          <button data-action-id="ACT_HELP" aria-label="Help">help_outline</button>
+          <button data-action-id="ACT_NOTIFICATIONS" aria-label="Notifications" disabled class="disabled-action">notifications</button>
+          <button data-action-id="ACT_HELP" aria-label="Help" disabled class="disabled-action">help_outline</button>
         </div>
       </header>
 
@@ -184,6 +184,7 @@
               <div class="form-actions">
                 <button data-action-id="ACT_SAVE_PREFERENCES" class="primary" type="submit">Save Preferences</button>
                 <button data-action-id="ACT_RESET_PREFERENCES" class="action" type="button">Reset to Defaults</button>
+                <button data-action-id="ACT_CLEAR_DATA" class="action danger" type="button">Clear Data</button>
               </div>
             </form>
           </div>

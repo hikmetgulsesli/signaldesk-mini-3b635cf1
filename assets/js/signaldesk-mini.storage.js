@@ -14,11 +14,19 @@
   function loadStorage() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
+      if (raw === null) return { empty: true };
+      return { data: JSON.parse(raw) };
     } catch (err) {
-      // Corrupt or unavailable localStorage
+      return { corrupt: true, error: String(err) };
     }
-    return null;
+  }
+
+  function clearStorage() {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (err) {
+      // Storage may be unavailable
+    }
   }
 
   function saveStorage(state) {
@@ -47,21 +55,35 @@
   }
 
   async function boot() {
-    let saved = loadStorage();
-    if (!saved) {
+    const loaded = loadStorage();
+    let saved = null;
+    let isCorrupt = false;
+
+    if (loaded.corrupt) {
+      store.dispatch({ type: 'SET_ERROR', error: 'Saved data is corrupted and could not be loaded.' });
+      isCorrupt = true;
+    } else if (loaded.data) {
+      saved = loaded.data;
+    }
+
+    if (!saved && !isCorrupt) {
       const seed = await loadSeedData();
       if (seed) saved = seed;
     }
 
     if (saved) {
       store.dispatch({ type: 'HYDRATE', saved });
-    } else {
+    } else if (!isCorrupt) {
       store.dispatch({ type: 'HYDRATE', saved: {} });
     }
 
-    // Persist every state change except TICK
+    // Persist every state change except TICK and CLEAR_DATA
     store.subscribe(function (state, action) {
       if (action && action.type === 'TICK') return;
+      if (action && action.type === 'CLEAR_DATA') {
+        clearStorage();
+        return;
+      }
       saveStorage(state);
     });
 
