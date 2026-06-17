@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings and Preferences - SignalDesk Mini</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .feedback-banner {
+        padding: 10px 12px;
+        border-radius: var(--radius-DEFAULT);
+        margin-bottom: var(--spacing-element-gap-md);
+        background: var(--color-surface-container);
+        color: var(--color-on-surface);
+      }
+      .feedback-banner.error-state {
+        background: var(--color-error-container);
+        color: var(--color-on-error-container);
+      }
+      .feedback-banner.success-state {
+        background: var(--color-secondary-fixed, #d3e4fe);
+        color: var(--color-on-secondary-fixed, #0b1c30);
+      }
+    </style>
   </head>
   <body>
     <main data-setfarm-root="settings" data-testid="setfarm-app-root" class="app-shell relative h-screen w-full overflow-hidden">
@@ -26,7 +43,7 @@
 
       <section class="app-stage">
         <div id="error-banner" class="error-banner hidden" role="alert"></div>
-        <div id="save-feedback" class="error-banner hidden" role="status"></div>
+        <div id="save-feedback" class="feedback-banner hidden" role="status"></div>
 
         <!-- Settings -->
         <section id="view-settings" class="view">

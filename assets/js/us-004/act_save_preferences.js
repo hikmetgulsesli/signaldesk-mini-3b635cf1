@@ -53,8 +53,9 @@
     const feedback = document.getElementById('save-feedback');
     if (feedback) {
       feedback.textContent = message;
-      feedback.classList.add('error-banner');
+      feedback.classList.add('feedback-banner');
       feedback.classList.toggle('error-state', !!isError);
+      feedback.classList.toggle('success-state', !isError);
       feedback.classList.remove('hidden');
       setTimeout(function () { feedback.classList.add('hidden'); }, 3000);
     } else if (banner) {
