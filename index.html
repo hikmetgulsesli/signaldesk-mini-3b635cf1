@@ -7,14 +7,203 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <main data-setfarm-root="baseline" data-testid="setfarm-app-root" class="app-shell">
-      <section class="hero">
-        <p class="eyebrow">Setfarm Static HTML</p>
-        <h1>SignalDesk Mini</h1>
-        <p class="summary">Baseline static page ready for plain HTML, CSS, and JavaScript implementation.</p>
+    <main data-setfarm-root="baseline" data-testid="setfarm-app-root" class="app-shell relative h-screen w-full overflow-hidden">
+      <header class="app-topbar">
+        <div class="brand">SignalDesk Mini</div>
+        <nav class="app-nav" aria-label="Primary">
+          <button data-action-id="ACT_NAV_OPERATIONS" data-view="operations" class="active">Operations</button>
+          <button data-action-id="ACT_NAV_INSIGHTS" data-view="insights">Insights</button>
+          <button data-action-id="ACT_NAV_SETTINGS" data-view="settings">Settings</button>
+        </nav>
+        <div class="app-actions">
+          <input type="search" data-action-id="ACT_SEARCH_RECORDS" placeholder="Search records..." aria-label="Search records" />
+          <button data-action-id="ACT_CREATE_RECORD" class="primary">Create Record</button>
+          <button data-action-id="ACT_NOTIFICATIONS" aria-label="Notifications">notifications</button>
+          <button data-action-id="ACT_HELP" aria-label="Help">help_outline</button>
+        </div>
+      </header>
+
+      <section class="app-stage">
+        <div id="error-banner" class="error-banner hidden" role="alert"></div>
+
+        <!-- Operations -->
+        <section id="view-operations" class="view">
+          <div class="summary-grid" aria-label="Status summary">
+            <div class="summary-card">
+              <h2>Total Records</h2>
+              <div class="metric" data-metric="total">0</div>
+            </div>
+            <div class="summary-card">
+              <h2>Open</h2>
+              <div class="metric" data-metric="open">0</div>
+            </div>
+            <div class="summary-card">
+              <h2>Acknowledged</h2>
+              <div class="metric" data-metric="acknowledged">0</div>
+            </div>
+            <div class="summary-card">
+              <h2>High Priority</h2>
+              <div class="metric" data-metric="high">0</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="filter-bar">
+              <label for="filter-status">Status</label>
+              <select id="filter-status" data-action-id="ACT_FILTER_STATUS">
+                <option value="">All Status</option>
+                <option value="open">Open</option>
+                <option value="acknowledged">Acknowledged</option>
+                <option value="closed">Closed</option>
+              </select>
+              <label for="filter-priority">Priority</label>
+              <select id="filter-priority" data-action-id="ACT_FILTER_PRIORITY">
+                <option value="">Any Priority</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+              <button data-action-id="ACT_CLEAR_FILTERS" class="action">Clear Filters</button>
+            </div>
+            <div id="record-list-container">
+              <table class="record-table">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Updated</th>
+                  </tr>
+                </thead>
+                <tbody id="record-list"></tbody>
+              </table>
+            </div>
+            <div id="operations-empty" class="empty-state hidden">
+              <h2>No records found</h2>
+              <p>Create your first record or clear the active filters.</p>
+              <button data-action-id="ACT_CREATE_RECORD" class="primary">Create Record</button>
+              <button data-action-id="ACT_CLEAR_FILTERS" class="action">Clear Filters</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Record Editor -->
+        <section id="view-editor" class="view hidden">
+          <div class="panel">
+            <h2 id="editor-title">Create Record</h2>
+            <form class="editor-form" id="editor-form" onsubmit="return false;">
+              <div class="form-row">
+                <label for="edit-title">Title *</label>
+                <input id="edit-title" type="text" data-edit="title" placeholder="Enter record title" required />
+              </div>
+              <div class="form-row">
+                <label for="edit-details">Details</label>
+                <textarea id="edit-details" data-edit="details" rows="4" placeholder="Enter details..."></textarea>
+              </div>
+              <div class="form-row">
+                <label for="edit-status">Status</label>
+                <select id="edit-status" data-edit="status">
+                  <option value="open">Open</option>
+                  <option value="acknowledged">Acknowledged</option>
+                  <option value="closed">Closed</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <span>Priority</span>
+                <div class="radio-group">
+                  <label><input type="radio" name="edit-priority" data-edit="priority" value="high" /> High</label>
+                  <label><input type="radio" name="edit-priority" data-edit="priority" value="medium" /> Medium</label>
+                  <label><input type="radio" name="edit-priority" data-edit="priority" value="low" /> Low</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="edit-tags">Tags</label>
+                <input id="edit-tags" type="text" data-edit="tags" placeholder="e.g. urgent, frontend, Q3" />
+              </div>
+              <div class="form-actions">
+                <button data-action-id="ACT_SAVE_RECORD" class="primary" type="submit">Save Record</button>
+                <button data-action-id="ACT_CANCEL_EDIT" class="action" type="button">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Insights -->
+        <section id="view-insights" class="view hidden">
+          <div class="summary-grid" aria-label="Insight metrics">
+            <div class="summary-card">
+              <h2>Open Rate</h2>
+              <div class="metric" data-metric="open-rate">0%</div>
+            </div>
+            <div class="summary-card">
+              <h2>Avg Resolution</h2>
+              <div class="metric" data-metric="avg-resolution">0h</div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="filter-bar">
+              <label for="insight-filter">Filter Insights</label>
+              <select id="insight-filter" data-action-id="ACT_FILTER_INSIGHTS">
+                <option value="all">All Activity</option>
+                <option value="recent">Recent Only</option>
+                <option value="high">High Priority</option>
+              </select>
+              <button data-action-id="ACT_EXPORT_SUMMARY" class="action">Export Summary</button>
+            </div>
+            <h2>Recent Activity</h2>
+            <ul id="activity-list" class="activity-list"></ul>
+          </div>
+        </section>
+
+        <!-- Settings -->
+        <section id="view-settings" class="view hidden">
+          <div class="panel">
+            <h2>Settings and Preferences</h2>
+            <form class="editor-form" id="settings-form" onsubmit="return false;">
+              <div class="form-row">
+                <span>Density</span>
+                <div class="radio-group">
+                  <label><input type="radio" name="pref-density" data-pref="density" value="compact" /> Compact</label>
+                  <label><input type="radio" name="pref-density" data-pref="density" value="comfortable" /> Comfortable</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <span>Notifications</span>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" data-pref="notifications" /> Enable notifications</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="pref-default-view">Default View</label>
+                <select id="pref-default-view" data-pref="defaultView">
+                  <option value="operations">Operations</option>
+                  <option value="insights">Insights</option>
+                  <option value="settings">Settings</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <button data-action-id="ACT_SAVE_PREFERENCES" class="primary" type="submit">Save Preferences</button>
+                <button data-action-id="ACT_RETRY_LOAD" class="action" type="button">Reset to Defaults</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Empty / Error Recovery -->
+        <section id="view-recovery" class="view hidden">
+          <div class="panel empty-state">
+            <h2 id="recovery-title">Something went wrong</h2>
+            <p id="recovery-message">Records could not be loaded.</p>
+            <button data-action-id="ACT_RETRY_LOAD" class="primary">Retry Load</button>
+            <button data-action-id="ACT_CREATE_RECORD" class="action">Create Record</button>
+            <button data-action-id="ACT_CLEAR_FILTERS" class="action">Clear Filters</button>
+          </div>
+        </section>
       </section>
     </main>
-    <script src="assets/js/app.js" defer></script>
+
+    <script src="assets/js/signaldesk-mini.state.js" defer></script>
+    <script src="assets/js/signaldesk-mini.storage.js" defer></script>
     <script src="assets/js/test-bridge.js" defer></script>
   </body>
 </html>

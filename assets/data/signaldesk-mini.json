@@ -1,0 +1,47 @@
+{
+  "records": [
+    {
+      "id": "rec-1",
+      "title": "Login latency spike",
+      "details": "Users reporting slow login on the west coast region.",
+      "status": "open",
+      "priority": "high",
+      "tags": ["login", "performance", "q3"],
+      "createdAt": 1718582400000,
+      "updatedAt": 1718582400000
+    },
+    {
+      "id": "rec-2",
+      "title": "Missing email notifications",
+      "details": "Alert pipeline dropped a batch of digest emails.",
+      "status": "acknowledged",
+      "priority": "medium",
+      "tags": ["email", "alerts"],
+      "createdAt": 1718496000000,
+      "updatedAt": 1718496000000
+    },
+    {
+      "id": "rec-3",
+      "title": "Dashboard filter reset",
+      "details": "Applied filters reset when the tab loses focus.",
+      "status": "closed",
+      "priority": "low",
+      "tags": ["dashboard", "ux"],
+      "createdAt": 1718409600000,
+      "updatedAt": 1718409600000
+    }
+  ],
+  "nextId": 4,
+  "preferences": {
+    "density": "comfortable",
+    "notifications": true,
+    "defaultView": "operations",
+    "savedFilters": []
+  },
+  "filter": {
+    "search": "",
+    "status": "",
+    "priority": ""
+  },
+  "view": "operations"
+}
